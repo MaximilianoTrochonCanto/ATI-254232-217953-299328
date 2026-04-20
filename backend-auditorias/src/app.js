@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config({ path: "./backend-auditorias/.env" });
+require("dotenv").config();
 
 const autRutas = require("./rutas/autRutas");
 
