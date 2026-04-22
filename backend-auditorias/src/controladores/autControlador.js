@@ -11,6 +11,14 @@ const register = async (req, res) => {
       return res.status(400).json({ message: "Nombre, email y password son obligatorios" });
     }
 
+    const rolesValidos = ["admin", "auditor"];
+
+    if (rol && !rolesValidos.includes(rol)) {
+      return res.status(400).json({
+      message: "Rol inválido. Solo se permite admin o auditor",
+    });
+}
+
     const userExists = await pool.query(
       "SELECT * FROM usuarios WHERE email = $1",
       [email]
@@ -91,7 +99,8 @@ const login = async (req, res) => {
   }
 };
 
+
 module.exports = {
   register,
   login,
-};
+  };
