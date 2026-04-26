@@ -18,7 +18,7 @@ export default function Register({ onSwitch }) {
       const data = await res.json();
 
       if (res.ok) {
-        alert("Usuario creado 🎉");
+        alert(data.message);
         onSwitch();
       } else {
         alert(data.message);

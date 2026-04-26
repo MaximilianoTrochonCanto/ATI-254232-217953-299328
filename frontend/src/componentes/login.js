@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Login({ onSwitch }) {
+export default function Login({ onSwitch,setRol,setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,7 +18,9 @@ export default function Login({ onSwitch }) {
 
       if (res.ok) {
         localStorage.setItem("token", data.token);
-        alert("Login exitoso 🚀");
+        localStorage.setItem("rol", data.user.rol);
+        setToken(data.token)
+        setRol(data.user.rol)        
       } else {
         alert(data.message);
       }
@@ -29,7 +31,7 @@ export default function Login({ onSwitch }) {
 
   return (
     <div className="card">
-      <h2>Login</h2>
+      <h2>Iniciar sesión</h2>
       <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
       <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
       <button onClick={handleLogin}>Ingresar</button>

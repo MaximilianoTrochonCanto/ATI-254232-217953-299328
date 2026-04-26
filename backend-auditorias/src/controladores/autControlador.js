@@ -31,14 +31,15 @@ const register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = await pool.query(
-      `INSERT INTO usuarios (nombre, email, password, rol)
-       VALUES ($1, $2, $3, $4)
+      `INSERT INTO usuarios
+      (nombre, email, password, rol, activo, estado)
+      VALUES ($1,$2,$3,$4,false,'pendiente')
        RETURNING id, nombre, email, rol, activo`,
       [nombre, email, hashedPassword, rol || "auditor"]
     );
 
     res.status(201).json({
-      message: "Usuario creado correctamente",
+      message: "Solicitud enviada correctamente. Aguarde aprobación del administrador.",
       user: newUser.rows[0],
     });
   } catch (error) {
@@ -53,26 +54,56 @@ const login = async (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-      return res.status(400).json({ message: "Email y password son obligatorios" });
+      return res.status(400).json({
+        message: "Email y password son obligatorios",
+      });
     }
 
+    // Buscar usuario SOLO por email
     const result = await pool.query(
-      "SELECT * FROM usuarios WHERE email = $1 AND activo = true",
+      "SELECT * FROM usuarios WHERE email = $1",
       [email]
     );
 
     if (result.rows.length === 0) {
-      return res.status(401).json({ message: "Credenciales inválidas" });
+      return res.status(401).json({
+        message: "Credenciales inválidas",
+      });
     }
 
     const user = result.rows[0];
 
+    // Validar password
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
-      return res.status(401).json({ message: "Credenciales inválidas" });
+      return res.status(401).json({
+        message: "Credenciales inválidas",
+      });
     }
 
+    // Validar estado
+    if (user.estado === "pendiente") {
+      return res.status(403).json({
+        message:
+          "Su cuenta se encuentra pendiente de aprobación por un administrador.",
+      });
+    }
+
+    if (user.estado === "rechazado") {
+      return res.status(403).json({
+        message:
+          "Su solicitud fue rechazada. Contacte al administrador.",
+      });
+    }
+
+    if (!user.activo) {
+      return res.status(403).json({
+        message: "Cuenta deshabilitada.",
+      });
+    }
+
+    // Token
     const token = jwt.sign(
       {
         id: user.id,
@@ -95,10 +126,11 @@ const login = async (req, res) => {
     });
   } catch (error) {
     console.error("Error en login:", error);
-    res.status(500).json({ message: "Error interno del servidor" });
+    res.status(500).json({
+      message: "Error interno del servidor",
+    });
   }
 };
-
 
 module.exports = {
   register,
