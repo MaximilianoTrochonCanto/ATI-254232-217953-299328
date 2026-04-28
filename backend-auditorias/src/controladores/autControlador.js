@@ -5,37 +5,102 @@ const jwt = require("jsonwebtoken");
 // Registro
 const register = async (req, res) => {
   try {
-    const { nombre, email, password, rol } = req.body;
+    const {
+      nombre,
+      apellido,
+      email,
+      password,
+      confirmPassword,
+      titulo_trabajo,
+      empresa_id,
+    } = req.body;
 
-    if (!nombre || !email || !password) {
-      return res.status(400).json({ message: "Nombre, email y password son obligatorios" });
+    if (!nombre || !apellido || !email || !password || !confirmPassword || !titulo_trabajo || !empresa_id) {
+      return res.status(400).json({
+        message: "Todos los campos son obligatorios.",
+      });
     }
 
-    const rolesValidos = ["admin", "auditor"];
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (rol && !rolesValidos.includes(rol)) {
+    if (!emailRegex.test(email)) {
       return res.status(400).json({
-      message: "Rol inválido. Solo se permite admin o auditor",
-    });
+        message: "El email ingresado no tiene un formato válido.",
+      });
+    }
+
+    if (password !== confirmPassword) {
+      return res.status(400).json({
+        message: "Las contraseñas no coinciden.",
+      });
+    }
+
+    if (password.length < 8) {
+      return res.status(400).json({
+        message: "La contraseña debe tener al menos 8 caracteres.",
+      });
+    }
+
+    const strongPasswordRegex =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._\-#])[A-Za-z\d@$!%*?&._\-#]+$/;
+
+if (!strongPasswordRegex.test(password)) {
+  return res.status(400).json({
+    message:
+      "La contraseña debe incluir mayúscula, minúscula, número y carácter especial."
+  });
 }
 
+    const empresaExiste = await pool.query(
+      "SELECT id FROM empresas WHERE id = $1 AND activo = true",
+      [empresa_id]
+    );
+
+    if (empresaExiste.rows.length === 0) {
+      return res.status(400).json({
+        message: "La empresa seleccionada no existe o no está activa.",
+      });
+    }
+
     const userExists = await pool.query(
-      "SELECT * FROM usuarios WHERE email = $1",
+      "SELECT id, estado FROM usuarios WHERE email = $1",
       [email]
     );
 
     if (userExists.rows.length > 0) {
-      return res.status(409).json({ message: "El email ya está registrado" });
+      const estado = userExists.rows[0].estado;
+
+      if (estado === "pendiente") {
+        return res.status(409).json({
+          message: "Ya existe una solicitud pendiente para este email.",
+        });
+      }
+
+      if (estado === "aprobado") {
+        return res.status(409).json({
+          message: "Ya existe una cuenta aprobada con este email.",
+        });
+      }
+
+      if (estado === "rechazado") {
+        return res.status(409).json({
+          message: "Ya existe una solicitud rechazada con este email. Contacte al administrador.",
+        });
+      }
+
+      return res.status(409).json({
+        message: "El email ya está registrado.",
+      });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = await pool.query(
       `INSERT INTO usuarios
-      (nombre, email, password, rol, activo, estado)
-      VALUES ($1,$2,$3,$4,false,'pendiente')
-       RETURNING id, nombre, email, rol, activo`,
-      [nombre, email, hashedPassword, rol || "auditor"]
+      (nombre, apellido, email, password, rol, activo, estado, titulo_trabajo, empresa_id)
+      VALUES ($1, $2, $3, $4, 'auditor', false, 'pendiente', $5, $6)
+      RETURNING id, nombre, apellido, email, rol, activo, estado, titulo_trabajo, empresa_id`,
+      [nombre, apellido, email, hashedPassword, titulo_trabajo, empresa_id]
     );
 
     res.status(201).json({
@@ -44,7 +109,9 @@ const register = async (req, res) => {
     });
   } catch (error) {
     console.error("Error en register:", error);
-    res.status(500).json({ message: "Error interno del servidor" });
+    res.status(500).json({
+      message: "Error interno del servidor.",
+    });
   }
 };
 

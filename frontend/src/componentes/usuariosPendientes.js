@@ -43,23 +43,51 @@ export default function PendingUsers() {
     cargarPendientes();
   };
 
-  return (
-    <div>
-      <h2>Solicitudes Pendientes</h2>
+ return (
+  <div className="pending-wrapper">
 
-      {users.map((u) => (
-        <div key={u.id}>
-          <p>{u.nombre} - {u.email}</p>
+    <h2>Solicitudes Pendientes</h2>
 
-          <button onClick={() => aprobar(u.id)}>
-            Aprobar
-          </button>
+    {users.length === 0 ? (
+      <div className="empty-state">
+        <img
+          src="/empty-requests.png"
+          alt="Sin solicitudes"
+        />
 
-          <button onClick={() => rechazar(u.id)}>
-            Rechazar
-          </button>
-        </div>
-      ))}
-    </div>
-  );
+        <h3>No hay solicitudes pendientes</h3>
+
+        <p>Todo se encuentra actualizado.</p>
+      </div>
+    ) : (
+      <div className="cards-grid">
+        {users.map((u) => (
+          <div className="user-card" key={u.id}>
+            <h4>{u.nombre} {u.apellido}</h4>
+
+            <p>{u.email}</p>
+            <p>Cargo: {u.titulo_trabajo || "Sin asignar"}</p>
+            <p>Empresa: {u.empresa_nombre || "Sin asignar"}</p>
+
+            <div className="user-actions">
+              <button
+                className="btn-aprobar"
+                onClick={() => aprobar(u.id)}
+              >
+                Aprobar
+              </button>
+
+              <button
+                className="btn-rechazar"
+                onClick={() => rechazar(u.id)}
+              >
+                Rechazar
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+);
 }

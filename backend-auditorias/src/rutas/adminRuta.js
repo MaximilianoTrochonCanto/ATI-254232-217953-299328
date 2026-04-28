@@ -7,7 +7,19 @@ const pool = require("../config/bd");
 
 router.get("/pendientes", verifyToken, authorizeRoles("admin"), async (req,res)=>{
   const result = await pool.query(
-    "SELECT id,nombre,email,rol,estado FROM usuarios WHERE estado='pendiente'"
+    `SELECT
+  u.id,
+  u.nombre,
+  u.apellido,
+  u.email,
+  u.titulo_trabajo,
+  u.empresa_id,
+  e.nombre AS empresa_nombre
+FROM usuarios u
+LEFT JOIN empresas e
+  ON u.empresa_id = e.id
+WHERE u.estado = 'pendiente'
+ORDER BY u.id DESC`
   );
 
   res.json(result.rows);

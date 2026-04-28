@@ -2,6 +2,7 @@ import { useState } from "react";
 import Login from "./componentes/login";
 import Register from "./componentes/registro";
 import PendingUsers from "./componentes/usuariosPendientes";
+import AdminPanel from "./componentes/adminPanel";
 import "./estilos.css";
 
 function App() {
@@ -22,22 +23,20 @@ function App() {
 
   // SI HAY SESIÓN
   if (token) {
+  if (rol === "admin") {
+    return <AdminPanel logout={logout} />;
+  }
+
+  if (rol === "auditor") {
     return (
       <div className="container">
         <div className="card">
-          <h2>Bienvenido</h2>
-
-          {rol === "admin" && <PendingUsers />}
-
-          {rol === "auditor" && <p>Panel Auditor</p>}
-
-          <button onClick={logout}>
-            Cerrar sesión
-          </button>
+          <p>Panel Auditor</p>
         </div>
       </div>
     );
   }
+}
 
   // SI NO HAY SESIÓN
   return (
