@@ -1,93 +1,150 @@
 import { useEffect, useState } from "react";
 
-export default function PendingUsers() {
+export default function PendingUsers({ logout, setNotificaciones }) {
   const [users, setUsers] = useState([]);
 
   const token = localStorage.getItem("token");
 
-  
   const cargarPendientes = async () => {
     const res = await fetch("http://localhost:3001/api/admin/pendientes", {
       headers: {
-        Authorization: `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     });
 
     const data = await res.json();
+
+    if (res.status === 401) {
+      logout();
+      return;
+    }
+
     setUsers(data);
+    setNotificaciones((prev) => {
+      return data.map((u) => {
+        const existente = prev.find((n) => n.id === u.id);
+
+        return {
+          id: u.id,
+          titulo: "Nueva solicitud",
+          mensaje: `${u.nombre} ${u.apellido} solicitó acceso`,
+          leida: existente ? existente.leida : false,
+        };
+      });
+    });
   };
 
   useEffect(() => {
     cargarPendientes();
+
+    const intervalo = setInterval(() => {
+      cargarPendientes();
+    }, 10000); // cada 10 segundos
+
+    return () => clearInterval(intervalo);
   }, []);
 
   const aprobar = async (id) => {
-    await fetch(`http://localhost:3001/api/admin/aprobar/${id}`, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token}`
+  try {
+    const res = await fetch(
+      `http://localhost:3001/api/admin/aprobar/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
-    });
+    );
 
-    cargarPendientes();
-  };
+    if (res.status === 401) {
+      logout();
+      return;
+    }
 
-  const rechazar = async (id) => {
-    await fetch(`http://localhost:3001/api/admin/rechazar/${id}`, {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token}`
+    if (res.ok) {
+      setUsers((prev) =>
+        prev.filter((u) => u.id !== id)
+      );
+
+      setNotificaciones((prev) =>
+        prev.filter((n) => n.id !== id)
+      );
+    }
+
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const rechazar = async (id) => {
+  try {
+    const res = await fetch(
+      `http://localhost:3001/api/admin/rechazar/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
-    });
+    );
 
-    cargarPendientes();
-  };
+    if (res.status === 401) {
+      logout();
+      return;
+    }
 
- return (
-  <div className="pending-wrapper">
+    if (res.ok) {
+      setUsers((prev) =>
+        prev.filter((u) => u.id !== id)
+      );
 
-    <h2>Solicitudes Pendientes</h2>
+      setNotificaciones((prev) =>
+        prev.filter((n) => n.id !== id)
+      );
+    }
 
-    {users.length === 0 ? (
-      <div className="empty-state">
-        <img
-          src="/empty-requests.png"
-          alt="Sin solicitudes"
-        />
+  } catch (error) {
+    console.error(error);
+  }
+};
 
-        <h3>No hay solicitudes pendientes</h3>
+  return (
+    <div className="pending-wrapper">
+      <h2>Solicitudes Pendientes</h2>
 
-        <p>Todo se encuentra actualizado.</p>
-      </div>
-    ) : (
-      <div className="cards-grid">
-        {users.map((u) => (
-          <div className="user-card" key={u.id}>
-            <h4>{u.nombre} {u.apellido}</h4>
+      {users.length === 0 ? (
+        <div className="empty-state">
+          <img src="/empty-requests.png" alt="Sin solicitudes" />
 
-            <p>{u.email}</p>
-            <p>Cargo: {u.titulo_trabajo || "Sin asignar"}</p>
-            <p>Empresa: {u.empresa_nombre || "Sin asignar"}</p>
+          <h3>No hay solicitudes pendientes</h3>
 
-            <div className="user-actions">
-              <button
-                className="btn-aprobar"
-                onClick={() => aprobar(u.id)}
-              >
-                Aprobar
-              </button>
+          <p>Todo se encuentra actualizado.</p>
+        </div>
+      ) : (
+        <div className="cards-grid">
+          {users.map((u) => (
+            <div className="user-card" key={u.id}>
+              <h4>
+                {u.nombre} {u.apellido}
+              </h4>
 
-              <button
-                className="btn-rechazar"
-                onClick={() => rechazar(u.id)}
-              >
-                Rechazar
-              </button>
+              <p>{u.email}</p>
+              <p>Cargo: {u.titulo_trabajo || "Sin asignar"}</p>
+              <p>Empresa: {u.empresa_nombre || "Sin asignar"}</p>
+
+              <div className="user-actions">
+                <button className="btn-aprobar" onClick={() => aprobar(u.id)}>
+                  Aprobar
+                </button>
+
+                <button className="btn-rechazar" onClick={() => rechazar(u.id)}>
+                  Rechazar
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    )}
-  </div>
-);
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }

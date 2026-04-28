@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Login from "./componentes/login";
 import Register from "./componentes/registro";
 import PendingUsers from "./componentes/usuariosPendientes";
@@ -21,52 +21,48 @@ function App() {
     setIsLogin(true);
   };
 
+
+
   // SI HAY SESIÓN
-  if (token) {
+  const sesionActiva =
+  token &&
+  token !== "null" &&
+  token !== "undefined" &&
+  rol;
+
+if (sesionActiva) {
   if (rol === "admin") {
     return <AdminPanel logout={logout} />;
   }
 
   if (rol === "auditor") {
-    return (
-      <div className="container">
-        <div className="card">
-          <p>Panel Auditor</p>
-        </div>
-      </div>
-    );
+    return <p logout={logout}>Panel de auditores</p>;
   }
 }
 
   // SI NO HAY SESIÓN
   return (
-  <div className="container">
-    
-    <div className="left-panel">
-      {isLogin ? (
-        <Login
-        
-          onSwitch={() => setIsLogin(false)}
-          setRol={setRol}
-          setToken={setToken}
-        />
-      ) : (
-        <Register
-          onSwitch={() => setIsLogin(true)}
-        />
-      )}
+    <div className="container">
+      <div className="left-panel">
+        {isLogin ? (
+          <Login
+            onSwitch={() => setIsLogin(false)}
+            setRol={setRol}
+            setToken={setToken}
+          />
+        ) : (
+          <Register onSwitch={() => setIsLogin(true)} />
+        )}
+      </div>
+
+      <div
+        className="right-panel"
+        style={{
+          backgroundImage: "url('/nutricion.jpg')",
+        }}
+      ></div>
     </div>
-
-    <div
-      className="right-panel"
-      style={{
-        backgroundImage:
-          "url('/nutricion.jpg')"
-      }}
-    ></div>
-
-  </div>
-);
+  );
 }
 
 export default App;
