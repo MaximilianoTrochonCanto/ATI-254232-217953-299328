@@ -5,7 +5,7 @@ require("dotenv").config();
 const autRutas = require("./rutas/autRutas");
 const empresaRutas = require("./rutas/empresaRuta");
 const adminRutas = require("./rutas/adminRuta");
-
+const auditoriaRoutes = require("./rutas/auditoriaRuta");
 
 const app = express();
 
@@ -16,6 +16,8 @@ app.use(express.json());
 app.use("/api/auth", autRutas);
 app.use("/api/empresas", empresaRutas);
 app.use("/api/admin", adminRutas);
+app.use("/api/auditorias",auditoriaRoutes)
+
 app.get("/", (req, res) => {
   res.send("API de auditorías funcionando");
 });
