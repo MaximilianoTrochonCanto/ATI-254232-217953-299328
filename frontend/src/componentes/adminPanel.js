@@ -1,67 +1,63 @@
 import { useState } from "react";
 import PendingUsers from "./usuariosPendientes";
 import GestionEmpresas from "./gestionEmpresas";
+import AuditoriasPanel from "./auditoriasPanel";
 
 export default function AdminPanel({ logout }) {
   const [seccion, setSeccion] = useState("solicitudes");
   const [menuOpen, setMenuOpen] = useState(false);
-  
-const [notificaciones, setNotificaciones] = useState([]);
-const [mostrarNotificaciones, setMostrarNotificaciones] =
-  useState(false);
-  const noLeidas = notificaciones.filter(
-  (n) => !n.leida
-).length;
-  return (
 
-    
+  const [notificaciones, setNotificaciones] = useState([]);
+  const [mostrarNotificaciones, setMostrarNotificaciones] = useState(false);
+  const noLeidas = notificaciones.filter((n) => !n.leida).length;
+  return (
     <div className="admin-layout">
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </button>
-      
+
       <aside className={`sidebar ${menuOpen ? "open" : ""}`}>
         <h2>Menu</h2>
         <div
-  className="notification-bell"
-  onClick={() => {
-    setMostrarNotificaciones(!mostrarNotificaciones);
+          className="notification-bell"
+          onClick={() => {
+            setMostrarNotificaciones(!mostrarNotificaciones);
 
-    setNotificaciones((prev) =>
-      prev.map((n) => ({
-        ...n,
-        leida: true,
-      }))
-    );
-  }}
->
-  🔔
-
-  {noLeidas > 0 && (
-    <span className="notification-badge">
-      {noLeidas}
-    </span>
-  )}
-</div>
-{mostrarNotificaciones && (
-  <div className="notifications-panel">
-
-    {notificaciones.length === 0 ? (
-      <p>No hay notificaciones</p>
-    ) : (
-      notificaciones.map((n) => (
-        <div
-          key={n.id}
-          className="notification-item"
+            setNotificaciones((prev) =>
+              prev.map((n) => ({
+                ...n,
+                leida: true,
+              })),
+            );
+          }}
         >
-          <strong>{n.titulo}</strong>
-          <p>{n.mensaje}</p>
+          🔔
+          {noLeidas > 0 && (
+            <span className="notification-badge">{noLeidas}</span>
+          )}
         </div>
-      ))
-    )}
-
-  </div>
-)}
+        {mostrarNotificaciones && (
+          <div className="notifications-panel">
+            {notificaciones.length === 0 ? (
+              <p>No hay notificaciones</p>
+            ) : (
+              notificaciones.map((n) => (
+                <div key={n.id} className="notification-item">
+                  <strong>{n.titulo}</strong>
+                  <p>{n.mensaje}</p>
+                </div>
+              ))
+            )}
+          </div>
+        )}
+        <button
+          onClick={() => {
+            setSeccion("auditorias");
+            setMenuOpen(false);
+          }}
+        >
+          Auditorías
+        </button>
         <button
           onClick={() => {
             setSeccion("solicitudes");
@@ -88,12 +84,13 @@ const [mostrarNotificaciones, setMostrarNotificaciones] =
           <>
             <PendingUsers
               logout={logout}
-               setNotificaciones={setNotificaciones}
+              setNotificaciones={setNotificaciones}
             />
           </>
         )}
 
         {seccion === "empresas" && <GestionEmpresas logout={logout} />}
+        {seccion === "auditorias" && <AuditoriasPanel />}
       </main>
     </div>
   );

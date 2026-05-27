@@ -4,6 +4,7 @@ import Register from "./componentes/registro";
 import PendingUsers from "./componentes/usuariosPendientes";
 import AdminPanel from "./componentes/adminPanel";
 import "./estilos.css";
+import AuditoriasPanel from "./componentes/auditoriasPanel";
 
 function App() {
   const [isLogin, setIsLogin] = useState(true);
@@ -36,7 +37,7 @@ if (sesionActiva) {
   }
 
   if (rol === "auditor") {
-    return <p logout={logout}>Panel de auditores</p>;
+   return <AuditoriasPanel logout={logout} />;
   }
 }
 
