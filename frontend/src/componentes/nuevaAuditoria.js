@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function AuditoriasPanel() {
+export default function AuditoriasPanel({modo = "auditor"}) {
   const [categoria, setCategoria] = useState(null);
   const [plantillas, setPlantillas] = useState([]);
   const [plantillaSeleccionada, setPlantillaSeleccionada] = useState(null);
@@ -13,6 +13,8 @@ export default function AuditoriasPanel() {
   const [error, setError] = useState("");
   const [auditoriaEnviada, setAuditoriaEnviada] = useState(false);
   const token = localStorage.getItem("token");
+  const [seccion,setSeccion] = useState("nueva")
+  const [menuOpen, setMenuOpen] = useState(false);
   const [resumenAuditoria, setResumenAuditoria] =
   useState(null);
 
@@ -213,7 +215,14 @@ setResumenAuditoria({
     setMensaje("");
   }}
 >
-  + Crear nueva auditoría
+  <button
+  onClick={() => {
+    setSeccion("nueva");
+    setMenuOpen(false);
+  }}
+>
+  Nueva auditoría
+</button>
 </button>
       </div>
     );

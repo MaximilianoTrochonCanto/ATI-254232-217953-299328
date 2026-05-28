@@ -1,14 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Login from "./componentes/login";
 import Register from "./componentes/registro";
-import PendingUsers from "./componentes/usuariosPendientes";
 import AdminPanel from "./componentes/adminPanel";
+import AuditorPanel from "./componentes/auditorPanel";
 import "./estilos.css";
-import AuditoriasPanel from "./componentes/auditoriasPanel";
 
 function App() {
   const [isLogin, setIsLogin] = useState(true);
-
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [rol, setRol] = useState(localStorage.getItem("rol"));
 
@@ -18,52 +16,39 @@ function App() {
 
     setToken(null);
     setRol(null);
-
     setIsLogin(true);
   };
 
-
-
-  // SI HAY SESIÓN
-  const sesionActiva =
-  token &&
-  token !== "null" &&
-  token !== "undefined" &&
-  rol;
-
-if (sesionActiva) {
-  if (rol === "admin") {
+  if (token && rol === "admin") {
     return <AdminPanel logout={logout} />;
   }
 
-  if (rol === "auditor") {
-   return <AuditoriasPanel logout={logout} />;
+  if (token && rol === "auditor") {
+    return <AuditorPanel logout={logout} />;
   }
-}
 
-  // SI NO HAY SESIÓN
   return (
-    <div className="container">
-      <div className="left-panel">
-        {isLogin ? (
-          <Login
-            onSwitch={() => setIsLogin(false)}
-            setRol={setRol}
-            setToken={setToken}
-          />
-        ) : (
-          <Register onSwitch={() => setIsLogin(true)} />
-        )}
-      </div>
+  <div className={`container ${isLogin ? "login-layout" : "register-layout"}`}>
+    <div
+      className="image-panel fade-image"
+      style={{
+        backgroundImage: `url(${isLogin? "/nutricion.png":"nutricion.jpg"})`,
+      }}
+    ></div>
 
-      <div
-        className="right-panel"
-        style={{
-          backgroundImage: "url('/nutricion.jpg')",
-        }}
-      ></div>
+    <div className="form-panel">
+      {isLogin ? (
+        <Login
+          onSwitch={() => setIsLogin(false)}
+          setRol={setRol}
+          setToken={setToken}
+        />
+      ) : (
+        <Register onSwitch={() => setIsLogin(true)} />
+      )}
     </div>
-  );
+  </div>
+);
 }
 
 export default App;

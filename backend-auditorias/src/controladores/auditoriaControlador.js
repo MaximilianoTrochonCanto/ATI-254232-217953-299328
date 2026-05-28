@@ -114,7 +114,7 @@ const obtenerAuditoriaCompleta = async (req, res) => {
     );
 
     const respuestas = await pool.query(
-      `SELECT r.*, c.texto, c.seccion, c.numero
+      `SELECT r.*, c.texto, c.seccion, c.numero, c.puntaje_maximo
        FROM respuestas r
        JOIN criterios c ON r.criterio_id = c.id
        WHERE r.auditoria_id = $1
@@ -132,10 +132,85 @@ const obtenerAuditoriaCompleta = async (req, res) => {
   }
 };
 
+
+const obtenerMisAuditorias = async (req, res) => {
+  try {
+    const usuario_id = req.user.id;
+
+    const result = await pool.query(
+      `
+      SELECT
+        a.*,
+        p.nombre AS plantilla_nombre,
+        e.nombre AS empresa_nombre
+      FROM auditorias a
+      JOIN plantillas p
+        ON a.plantilla_id = p.id
+      JOIN empresas e
+        ON a.empresa_id = e.id
+      WHERE a.usuario_id = $1
+      ORDER BY a.fecha_creacion DESC
+      `,
+      [usuario_id]
+    );
+
+    res.json(result.rows);
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Error interno del servidor."
+    });
+  }
+};
+
+const obtenerTodasAuditorias = async (req, res) => {
+  try {
+
+    const result = await pool.query(
+      `
+      SELECT
+        a.*,
+        p.nombre AS plantilla_nombre,
+        e.nombre AS empresa_nombre,
+        CONCAT(u.nombre, ' ', u.apellido)
+          AS usuario_nombre
+
+      FROM auditorias a
+
+      JOIN plantillas p
+        ON a.plantilla_id = p.id
+
+      JOIN empresas e
+        ON a.empresa_id = e.id
+
+      JOIN usuarios u
+        ON a.usuario_id = u.id
+
+      ORDER BY a.fecha_creacion DESC
+      `
+    );
+
+    res.json(result.rows);
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Error interno del servidor."
+    });
+  }
+};
+
+
 module.exports = {
   listarPlantillas,
   obtenerCriteriosPorPlantilla,
   crearAuditoria,
   guardarRespuestas,
   obtenerAuditoriaCompleta,
+  obtenerMisAuditorias,
+  obtenerTodasAuditorias
 };
+
