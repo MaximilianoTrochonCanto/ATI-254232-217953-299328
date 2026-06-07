@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ListaAuditorias from "./listaAuditorias";
 import NuevaAuditoria from "./nuevaAuditoria";
+import ReclamoInforme from "./reclamoInforme";
 
 export default function AuditorPanel({ logout }) {
   const [seccion, setSeccion] = useState("mis-auditorias");
@@ -40,6 +41,15 @@ export default function AuditorPanel({ logout }) {
           Nueva auditoría
         </button>
 
+        <button
+          onClick={() => {
+            setSeccion("reclamos");
+            setMenuOpen(false);
+          }}
+        >
+          Reclamos / Informes
+        </button>
+
         <button onClick={logout}>Logout</button>
       </aside>
 
@@ -49,6 +59,8 @@ export default function AuditorPanel({ logout }) {
         )}
 
         {seccion === "nueva" && <NuevaAuditoria />}
+
+        {seccion === "reclamos" && <ReclamoInforme />}
       </main>
     </div>
   );

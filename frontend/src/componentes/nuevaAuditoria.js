@@ -1,71 +1,134 @@
 import { useEffect, useState } from "react";
+import CumplimientoMenu from "./cumplimientoMenu";
+import AuditoriaArchivo from "./auditoriaArchivo";
 
-export default function AuditoriasPanel({modo = "auditor"}) {
+export default function NuevaAuditoria() {
   const [categoria, setCategoria] = useState(null);
   const [plantillas, setPlantillas] = useState([]);
   const [plantillaSeleccionada, setPlantillaSeleccionada] = useState(null);
   const [criterios, setCriterios] = useState([]);
   const [empresas, setEmpresas] = useState([]);
+
   const [empresaId, setEmpresaId] = useState("");
   const [lugar, setLugar] = useState("");
   const [respuestas, setRespuestas] = useState({});
+
   const [mensaje, setMensaje] = useState("");
   const [error, setError] = useState("");
   const [auditoriaEnviada, setAuditoriaEnviada] = useState(false);
+  const [resumenAuditoria, setResumenAuditoria] = useState(null);
+
   const token = localStorage.getItem("token");
-  const [seccion,setSeccion] = useState("nueva")
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [resumenAuditoria, setResumenAuditoria] =
-  useState(null);
 
   useEffect(() => {
     cargarPlantillas();
     cargarEmpresas();
   }, []);
 
-  const cargarPlantillas = async () => {
-    const res = await fetch("http://localhost:3001/api/auditorias/plantillas", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+  const normalizarTexto = (texto = "") =>
+    texto
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
 
-    const data = await res.json();
-    if (res.ok) setPlantillas(data);
+  const esPlantillaArchivo = (plantilla) => {
+    const nombre = normalizarTexto(plantilla?.nombre);
+
+    return (
+      plantilla?.tipo === "archivo" ||
+      nombre.includes("seguimiento de capacitaciones")
+    );
+  };
+
+  const cargarPlantillas = async () => {
+    try {
+      const res = await fetch("http://localhost:3001/api/auditorias/plantillas", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setPlantillas(data);
+      } else {
+        setError(data.message || "Error al cargar plantillas.");
+      }
+    } catch (error) {
+      setError("Error al cargar plantillas.");
+    }
   };
 
   const cargarEmpresas = async () => {
-    const res = await fetch("http://localhost:3001/api/empresas", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    try {
+      const res = await fetch("http://localhost:3001/api/empresas", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    const data = await res.json();
-    if (res.ok) setEmpresas(data);
+      const data = await res.json();
+
+      if (res.ok) {
+        setEmpresas(data);
+      } else {
+        setError(data.message || "Error al cargar empresas.");
+      }
+    } catch (error) {
+      setError("Error al cargar empresas.");
+    }
   };
 
   const seleccionarPlantilla = async (plantilla) => {
     setPlantillaSeleccionada(plantilla);
     setMensaje("");
     setError("");
+    setRespuestas({});
+    setEmpresaId("");
+    setLugar("");
+    setCriterios([]);
 
-    const res = await fetch(
-      `http://localhost:3001/api/auditorias/plantillas/${plantilla.id}/criterios`,
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      },
-    );
+    const nombre = normalizarTexto(plantilla.nombre);
 
-    const data = await res.json();
-    if (res.ok) setCriterios(data);
+    const esCumplimientoMenu = nombre.includes("cumplimiento menu");
+    const esAuditoriaArchivo = esPlantillaArchivo(plantilla);
+
+    if (esCumplimientoMenu || esAuditoriaArchivo) {
+      return;
+    }
+
+    try {
+      const res = await fetch(
+        `http://localhost:3001/api/auditorias/plantillas/${plantilla.id}/criterios`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setCriterios(data);
+      } else {
+        setError(data.message || "No se pudieron cargar los criterios.");
+      }
+    } catch (error) {
+      setError("Error al cargar criterios.");
+    }
   };
 
   const actualizarRespuesta = (criterioId, campo, valor) => {
-    setRespuestas({
-      ...respuestas,
+    setRespuestas((prev) => ({
+      ...prev,
       [criterioId]: {
-        ...respuestas[criterioId],
+        ...prev[criterioId],
         criterio_id: criterioId,
         [campo]: valor,
       },
-    });
+    }));
   };
 
   const guardarAuditoria = async () => {
@@ -94,7 +157,7 @@ export default function AuditoriasPanel({modo = "auditor"}) {
       const auditoriaData = await auditoriaRes.json();
 
       if (!auditoriaRes.ok) {
-        setError(auditoriaData.message);
+        setError(auditoriaData.message || "No se pudo crear la auditoría.");
         return;
       }
 
@@ -110,18 +173,20 @@ export default function AuditoriasPanel({modo = "auditor"}) {
       }));
 
       const puntajeObtenido = respuestasArray.reduce(
-  (acc, r) => acc + (r.puntuacion || 0),
-  0
-);
+        (acc, r) => acc + (r.puntuacion || 0),
+        0,
+      );
 
-const puntajeMaximo = criterios.reduce(
-  (acc, c) => acc + c.puntaje_maximo,
-  0
-);
+      const puntajeMaximo = criterios.reduce(
+        (acc, c) => acc + (c.puntaje_maximo || 2),
+        0,
+      );
 
-const porcentaje = Math.round(
-  (puntajeObtenido / puntajeMaximo) * 100
-);
+      const porcentaje =
+        puntajeMaximo > 0
+          ? Math.round((puntajeObtenido / puntajeMaximo) * 100)
+          : 0;
+
       const respuestasRes = await fetch(
         `http://localhost:3001/api/auditorias/${auditoriaId}/respuestas`,
         {
@@ -138,95 +203,106 @@ const porcentaje = Math.round(
 
       if (respuestasRes.ok) {
         const empresaSeleccionada = empresas.find(
-  (e) => e.id === Number(empresaId)
-);
+          (e) => e.id === Number(empresaId),
+        );
 
-setResumenAuditoria({
-  empresa: empresaSeleccionada?.nombre || "-",
-  lugar,
-  fecha: new Date().toLocaleDateString(),
-  puntaje: porcentaje,
-  plantilla: plantillaSeleccionada.nombre,
-});
-        setAuditoriaEnviada(true);
+        setResumenAuditoria({
+          empresa: empresaSeleccionada?.nombre || "-",
+          lugar,
+          fecha: new Date().toLocaleDateString(),
+          puntaje: porcentaje,
+          plantilla: plantillaSeleccionada.nombre,
+        });
+
         setMensaje("Auditoría guardada correctamente.");
+        setAuditoriaEnviada(true);
+
         setRespuestas({});
         setLugar("");
         setEmpresaId("");
-        setPlantillaSeleccionada(null);
-        setCriterios([]);
-        setCategoria(null);
       } else {
-        setError(respuestasData.message);
+        setError(
+          respuestasData.message || "No se pudieron guardar respuestas.",
+        );
       }
     } catch (error) {
       setError("Error al conectar con el servidor.");
     }
   };
 
+  const volverAPlantillas = () => {
+    setPlantillaSeleccionada(null);
+    setCriterios([]);
+    setMensaje("");
+    setError("");
+  };
+
   const plantillasFiltradas = plantillas.filter(
     (p) => p.categoria === categoria,
   );
+
+  const nombrePlantilla = normalizarTexto(plantillaSeleccionada?.nombre);
+
+  const esCumplimientoMenu = nombrePlantilla.includes("cumplimiento menu");
+
+  const esAuditoriaArchivo = esPlantillaArchivo(plantillaSeleccionada);
+
+  const tipoServicioMenu = nombrePlantilla.includes("vianda")
+    ? "viandas"
+    : "comedor";
+
   if (auditoriaEnviada) {
     return (
       <div className="success-screen">
-        <img src="/success-audit.gif" alt="Auditoría enviada" />
+        <img src="/success-audit.png" alt="Auditoría registrada" />
 
-        <h2>Auditoría enviada correctamente</h2>
+        <h2>Auditoría registrada</h2>
+        <p>La información quedó almacenada correctamente.</p>
 
-       <div className="audit-summary">
+        <div className="audit-summary">
+          <div className="summary-item">
+            <span>Empresa</span>
+            <strong>{resumenAuditoria?.empresa}</strong>
+          </div>
 
-  <div className="summary-item">
-    <span>Empresa</span>
-    <strong>{resumenAuditoria?.empresa}</strong>
-  </div>
+          <div className="summary-item">
+            <span>Auditoría</span>
+            <strong>{resumenAuditoria?.plantilla}</strong>
+          </div>
 
-  <div className="summary-item">
-    <span>Auditoría</span>
-    <strong>{resumenAuditoria?.plantilla}</strong>
-  </div>
+          <div className="summary-item">
+            <span>Lugar</span>
+            <strong>{resumenAuditoria?.lugar || "-"}</strong>
+          </div>
 
-  <div className="summary-item">
-    <span>Lugar</span>
-    <strong>{resumenAuditoria?.lugar || "-"}</strong>
-  </div>
+          <div className="summary-item">
+            <span>Fecha</span>
+            <strong>{resumenAuditoria?.fecha}</strong>
+          </div>
 
-  <div className="summary-item">
-    <span>Fecha</span>
-    <strong>{resumenAuditoria?.fecha}</strong>
-  </div>
-
-  <div className="summary-item score">
-    <span>Resultado</span>
-    <strong>
-      {resumenAuditoria?.puntaje}%
-    </strong>
-  </div>
-
-</div>
+          <div className="summary-item score">
+            <span>Resultado</span>
+            <strong>{resumenAuditoria?.puntaje}%</strong>
+          </div>
+        </div>
 
         <button
-  className="new-audit-button"
-  onClick={() => {
-    setAuditoriaEnviada(false);
-    setPlantillaSeleccionada(null);
-    setCategoria(null);
-    setCriterios([]);
-    setMensaje("");
-  }}
->
-  <button
-  onClick={() => {
-    setSeccion("nueva");
-    setMenuOpen(false);
-  }}
->
-  Nueva auditoría
-</button>
-</button>
+          className="new-audit-button"
+          onClick={() => {
+            setAuditoriaEnviada(false);
+            setPlantillaSeleccionada(null);
+            setCategoria(null);
+            setCriterios([]);
+            setMensaje("");
+            setResumenAuditoria(null);
+          }}
+        >
+          + Crear nueva auditoría
+        </button>
       </div>
     );
   }
+
   if (!categoria) {
     return (
       <div className="auditorias-wrapper">
@@ -235,7 +311,6 @@ setResumenAuditoria({
 
         <div className="audit-type-grid">
           <button onClick={() => setCategoria("inocuidad")}>Inocuidad</button>
-
           <button onClick={() => setCategoria("servicios")}>Servicios</button>
         </div>
       </div>
@@ -245,13 +320,9 @@ setResumenAuditoria({
   if (categoria && !plantillaSeleccionada) {
     return (
       <div className="auditorias-wrapper">
-        
-          <button
-  className="back-button"
- onClick={() => setCategoria(null)}
->
-    <img src="/back-button.png" />
-</button>
+        <button className="back-button" onClick={() => setCategoria(null)}>
+          ←
+        </button>
 
         <h2>{categoria === "inocuidad" ? "Inocuidad" : "Servicios"}</h2>
         <p>Seleccione una plantilla de auditoría.</p>
@@ -259,7 +330,9 @@ setResumenAuditoria({
         <div className="plantillas-grid">
           {plantillasFiltradas.map((p) => (
             <div className="plantilla-card" key={p.id}>
-              <h3>{p.nombre}</h3>              
+              <h3>{p.nombre}</h3>
+              <p>{p.descripcion}</p>
+
               <button onClick={() => seleccionarPlantilla(p)}>
                 Usar plantilla
               </button>
@@ -270,17 +343,44 @@ setResumenAuditoria({
     );
   }
 
+  if (esAuditoriaArchivo) {
+    return (
+      <div className="auditorias-wrapper">
+        <button className="back-button" onClick={volverAPlantillas}>
+          ←
+        </button>
+
+        <AuditoriaArchivo
+          plantillaSeleccionada={plantillaSeleccionada}
+          empresas={empresas}
+          volver={volverAPlantillas}
+        />
+      </div>
+    );
+  }
+
+  if (esCumplimientoMenu) {
+    return (
+      <div className="auditorias-wrapper">
+        <button className="back-button" onClick={volverAPlantillas}>
+          ←
+        </button>
+
+        <CumplimientoMenu
+          tipoServicio={tipoServicioMenu}
+          plantillaSeleccionada={plantillaSeleccionada}
+          empresas={empresas}
+          volver={volverAPlantillas}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="auditorias-wrapper">
-      <button
-  className="back-button"
-  onClick={() => {
-    setPlantillaSeleccionada(null);
-    setCriterios([]);
-  }}
->
-  <img src="/back-button.png" />
-</button>
+      <button className="back-button" onClick={volverAPlantillas}>
+        ←
+      </button>
 
       <h2>{plantillaSeleccionada.nombre}</h2>
 
@@ -363,7 +463,9 @@ setResumenAuditoria({
       {error && <p className="error-message">{error}</p>}
       {mensaje && <p className="success-message">{mensaje}</p>}
 
-      <button onClick={guardarAuditoria}>Guardar auditoría</button>
+      <button className="new-audit-button" onClick={guardarAuditoria}>
+        Guardar auditoría
+      </button>
     </div>
   );
 }

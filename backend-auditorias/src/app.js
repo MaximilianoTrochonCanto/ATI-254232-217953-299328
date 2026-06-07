@@ -6,6 +6,8 @@ const autRutas = require("./rutas/autRutas");
 const empresaRutas = require("./rutas/empresaRuta");
 const adminRutas = require("./rutas/adminRuta");
 const auditoriaRoutes = require("./rutas/auditoriaRuta");
+const rutaReclamos = require("./rutas/rutaReclamos");
+
 
 const app = express();
 
@@ -17,7 +19,7 @@ app.use("/api/auth", autRutas);
 app.use("/api/empresas", empresaRutas);
 app.use("/api/admin", adminRutas);
 app.use("/api/auditorias",auditoriaRoutes)
-
+app.use("/api/reclamos", rutaReclamos);
 app.get("/", (req, res) => {
   res.send("API de auditorías funcionando");
 });

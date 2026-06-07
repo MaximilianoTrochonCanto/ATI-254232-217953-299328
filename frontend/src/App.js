@@ -3,6 +3,7 @@ import Login from "./componentes/login";
 import Register from "./componentes/registro";
 import AdminPanel from "./componentes/adminPanel";
 import AuditorPanel from "./componentes/auditorPanel";
+import ReclamoInforme from "./componentes/reclamoInforme";
 import "./estilos.css";
 
 function App() {

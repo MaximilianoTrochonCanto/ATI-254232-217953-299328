@@ -12,7 +12,17 @@ const {
   obtenerAuditoriaCompleta,
   obtenerMisAuditorias,
   obtenerTodasAuditorias,
+  crearAuditoriaConArchivo
 } = require("../controladores/auditoriaControlador");
+
+const upload = require("../middlewares/uploadMiddleware");
+
+router.post(
+  "/archivo",
+  verifyToken,
+  upload.single("archivo"),
+);
+
 
 router.get("/plantillas", verifyToken, listarPlantillas);
 router.get("/plantillas/:id/criterios", verifyToken, obtenerCriteriosPorPlantilla);

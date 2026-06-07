@@ -136,73 +136,162 @@ const obtenerAuditoriaCompleta = async (req, res) => {
 const obtenerMisAuditorias = async (req, res) => {
   try {
     const usuario_id = req.user.id;
+    const { empresa_id, fecha_desde, fecha_hasta } = req.query;
 
-    const result = await pool.query(
-      `
+    let query = `
       SELECT
         a.*,
         p.nombre AS plantilla_nombre,
         e.nombre AS empresa_nombre
       FROM auditorias a
-      JOIN plantillas p
-        ON a.plantilla_id = p.id
-      JOIN empresas e
-        ON a.empresa_id = e.id
+      JOIN plantillas p ON a.plantilla_id = p.id
+      JOIN empresas e ON a.empresa_id = e.id
       WHERE a.usuario_id = $1
-      ORDER BY a.fecha_creacion DESC
-      `,
-      [usuario_id]
-    );
+    `;
+
+    const params = [usuario_id];
+    let index = 2;
+
+    if (empresa_id) {
+      query += ` AND a.empresa_id = $${index}`;
+      params.push(empresa_id);
+      index++;
+    }
+
+    if (fecha_desde) {
+      query += ` AND a.fecha >= $${index}`;
+      params.push(fecha_desde);
+      index++;
+    }
+
+    if (fecha_hasta) {
+      query += ` AND a.fecha <= $${index}`;
+      params.push(fecha_hasta);
+      index++;
+    }
+
+    query += ` ORDER BY a.fecha_creacion DESC`;
+
+    const result = await pool.query(query, params);
 
     res.json(result.rows);
-
   } catch (error) {
-    console.error(error);
-
+    console.error("Error al obtener mis auditorías:", error);
     res.status(500).json({
-      message: "Error interno del servidor."
+      message: "Error interno del servidor.",
     });
   }
 };
 
 const obtenerTodasAuditorias = async (req, res) => {
   try {
+    const { empresa_id, fecha_desde, fecha_hasta } = req.query;
 
-    const result = await pool.query(
-      `
+    let query = `
       SELECT
         a.*,
         p.nombre AS plantilla_nombre,
         e.nombre AS empresa_nombre,
-        CONCAT(u.nombre, ' ', u.apellido)
-          AS usuario_nombre
-
+        CONCAT(u.nombre, ' ', u.apellido) AS usuario_nombre
       FROM auditorias a
+      JOIN plantillas p ON a.plantilla_id = p.id
+      JOIN empresas e ON a.empresa_id = e.id
+      JOIN usuarios u ON a.usuario_id = u.id
+      WHERE 1 = 1
+    `;
 
-      JOIN plantillas p
-        ON a.plantilla_id = p.id
+    const params = [];
+    let index = 1;
 
-      JOIN empresas e
-        ON a.empresa_id = e.id
+    if (empresa_id) {
+      query += ` AND a.empresa_id = $${index}`;
+      params.push(empresa_id);
+      index++;
+    }
 
-      JOIN usuarios u
-        ON a.usuario_id = u.id
+    if (fecha_desde) {
+      query += ` AND a.fecha >= $${index}`;
+      params.push(fecha_desde);
+      index++;
+    }
 
-      ORDER BY a.fecha_creacion DESC
-      `
-    );
+    if (fecha_hasta) {
+      query += ` AND a.fecha <= $${index}`;
+      params.push(fecha_hasta);
+      index++;
+    }
+
+    query += ` ORDER BY a.fecha_creacion DESC`;
+
+    const result = await pool.query(query, params);
 
     res.json(result.rows);
-
   } catch (error) {
-    console.error(error);
-
+    console.error("Error al obtener todas las auditorías:", error);
     res.status(500).json({
-      message: "Error interno del servidor."
+      message: "Error interno del servidor.",
     });
   }
 };
 
+const crearAuditoriaConArchivo = async (req, res) => {
+  try {
+    const { plantilla_id, empresa_id, lugar, observaciones } = req.body;
+    const usuario_id = req.user.id;
+
+    if (!plantilla_id || !empresa_id) {
+      return res.status(400).json({
+        message: "Plantilla y empresa son obligatorias.",
+      });
+    }
+
+    if (!req.file) {
+      return res.status(400).json({
+        message: "Debe adjuntar un archivo.",
+      });
+    }
+
+    const auditoriaResult = await pool.query(
+      `INSERT INTO auditorias
+       (plantilla_id, empresa_id, usuario_id, lugar, observacion_general, estado)
+       VALUES ($1, $2, $3, $4, $5, 'finalizada')
+       RETURNING *`,
+      [
+        plantilla_id,
+        empresa_id,
+        usuario_id,
+        lugar || null,
+        observaciones || null,
+      ]
+    );
+
+    const auditoria = auditoriaResult.rows[0];
+
+    await pool.query(
+      `INSERT INTO auditoria_archivos
+       (auditoria_id, nombre_original, nombre_guardado, ruta_archivo, tipo_mime, observaciones)
+       VALUES ($1, $2, $3, $4, $5, $6)`,
+      [
+        auditoria.id,
+        req.file.originalname,
+        req.file.filename,
+        req.file.path,
+        req.file.mimetype,
+        observaciones || null,
+      ]
+    );
+
+    res.status(201).json({
+      message: "Documento cargado correctamente.",
+      auditoria,
+    });
+  } catch (error) {
+    console.error("Error al crear auditoría con archivo:", error);
+    res.status(500).json({
+      message: "Error interno del servidor.",
+    });
+  }
+};
 
 module.exports = {
   listarPlantillas,
@@ -211,6 +300,7 @@ module.exports = {
   guardarRespuestas,
   obtenerAuditoriaCompleta,
   obtenerMisAuditorias,
-  obtenerTodasAuditorias
+  obtenerTodasAuditorias,
+  crearAuditoriaConArchivo
 };
 
