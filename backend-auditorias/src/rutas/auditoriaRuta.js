@@ -12,7 +12,8 @@ const {
   obtenerAuditoriaCompleta,
   obtenerMisAuditorias,
   obtenerTodasAuditorias,
-  crearAuditoriaConArchivo
+  crearAuditoriaConArchivo,
+  descargarAuditoriaPDF
 } = require("../controladores/auditoriaControlador");
 
 const upload = require("../middlewares/uploadMiddleware");
@@ -34,6 +35,8 @@ router.post("/", verifyToken, crearAuditoria);
 router.post("/:id/respuestas", verifyToken, guardarRespuestas);
 
 // Esta siempre al final
+router.get("/:id/pdf", verifyToken, descargarAuditoriaPDF);
 router.get("/:id", verifyToken, obtenerAuditoriaCompleta);
+
 
 module.exports = router;

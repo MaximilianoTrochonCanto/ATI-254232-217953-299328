@@ -42,11 +42,14 @@ export default function NuevaAuditoria() {
 
   const cargarPlantillas = async () => {
     try {
-      const res = await fetch("http://localhost:3001/api/auditorias/plantillas", {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const res = await fetch(
+        "http://localhost:3001/api/auditorias/plantillas",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
 
       const data = await res.json();
 
@@ -311,7 +314,10 @@ export default function NuevaAuditoria() {
 
         <div className="audit-type-grid">
           <button onClick={() => setCategoria("inocuidad")}>Inocuidad</button>
+
           <button onClick={() => setCategoria("servicios")}>Servicios</button>
+
+          <button onClick={() => setCategoria("SYSO")}>SYSO</button>
         </div>
       </div>
     );
@@ -324,7 +330,7 @@ export default function NuevaAuditoria() {
           ←
         </button>
 
-        <h2>{categoria === "inocuidad" ? "Inocuidad" : "Servicios"}</h2>
+        <h2>{categoria === "inocuidad" ? "Inocuidad" : categoria === "servicios"? "Servicios":"SYSO"}</h2>
         <p>Seleccione una plantilla de auditoría.</p>
 
         <div className="plantillas-grid">

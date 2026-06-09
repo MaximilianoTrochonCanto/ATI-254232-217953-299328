@@ -1,4 +1,5 @@
 const pool = require("../config/bd");
+const PDFDocument = require("pdfkit");
 
 const listarPlantillas = async (req, res) => {
   try {
@@ -293,6 +294,143 @@ const crearAuditoriaConArchivo = async (req, res) => {
   }
 };
 
+const descargarAuditoriaPDF = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const auditoriaResult = await pool.query(
+      `
+      SELECT 
+        a.*,
+        p.nombre AS plantilla_nombre,
+        e.nombre AS empresa_nombre,
+        CONCAT(u.nombre, ' ', u.apellido) AS auditor_nombre
+      FROM auditorias a
+      JOIN plantillas p ON a.plantilla_id = p.id
+      JOIN empresas e ON a.empresa_id = e.id
+      JOIN usuarios u ON a.usuario_id = u.id
+      WHERE a.id = $1
+      `,
+      [id]
+    );
+
+    if (auditoriaResult.rows.length === 0) {
+      return res.status(404).json({
+        message: "Auditoría no encontrada.",
+      });
+    }
+
+    const auditoria = auditoriaResult.rows[0];
+
+    const respuestasResult = await pool.query(
+      `
+      SELECT 
+        r.*,
+        c.texto,
+        c.seccion,
+        c.numero,
+        c.puntaje_maximo
+      FROM respuestas r
+      JOIN criterios c ON r.criterio_id = c.id
+      WHERE r.auditoria_id = $1
+      ORDER BY c.orden ASC
+      `,
+      [id]
+    );
+
+    const respuestas = respuestasResult.rows;
+
+    const puntajeObtenido = respuestas.reduce(
+      (acc, r) => acc + (r.puntuacion || 0),
+      0
+    );
+
+    const puntajeMaximo = respuestas.reduce((acc, r) => {
+      if (r.no_verificable) return acc;
+      return acc + (r.puntaje_maximo || 2);
+    }, 0);
+
+    const porcentaje =
+      puntajeMaximo > 0
+        ? Math.round((puntajeObtenido / puntajeMaximo) * 100)
+        : 0;
+
+    const doc = new PDFDocument({ margin: 50 });
+
+    const filename = `auditoria-${id}.pdf`;
+
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader(
+      "Content-Disposition",
+      `attachment; filename="${filename}"`
+    );
+
+    doc.pipe(res);
+
+    doc
+      .fontSize(20)
+      .text("Reporte de Auditoría", { align: "center" });
+
+    doc.moveDown();
+
+    doc.fontSize(14).text(auditoria.plantilla_nombre, {
+      align: "center",
+    });
+
+    doc.moveDown(2);
+
+    doc.fontSize(12);
+
+    doc.text(`Empresa: ${auditoria.empresa_nombre}`);
+    doc.text(`Auditor: ${auditoria.auditor_nombre}`);
+    doc.text(
+      `Fecha: ${new Date(auditoria.fecha).toLocaleDateString()}`
+    );
+    doc.text(`Lugar: ${auditoria.lugar || "-"}`);
+    doc.text(`Estado: ${auditoria.estado}`);
+    doc.text(`Resultado: ${porcentaje}%`);
+
+    if (auditoria.observacion_general) {
+      doc.moveDown();
+      doc.text(`Observación general: ${auditoria.observacion_general}`);
+    }
+
+    doc.moveDown(2);
+
+    doc.fontSize(16).text("Detalle de respuestas");
+    doc.moveDown();
+
+    respuestas.forEach((r, index) => {
+      doc.fontSize(12).text(`${index + 1}. ${r.texto}`, {
+        bold: true,
+      });
+
+      doc.fontSize(10).text(`Sección: ${r.seccion || "-"}`);
+      doc.text(
+        `Puntuación: ${
+          r.no_verificable ? "No verificable" : r.puntuacion
+        }`
+      );
+      doc.text(
+        `Observación: ${r.observacion || "Sin observaciones"}`
+      );
+
+      doc.moveDown();
+
+      if (doc.y > 700) {
+        doc.addPage();
+      }
+    });
+
+    doc.end();
+  } catch (error) {
+    console.error("Error al generar PDF:", error);
+    res.status(500).json({
+      message: "Error interno al generar PDF.",
+    });
+  }
+};
+
 module.exports = {
   listarPlantillas,
   obtenerCriteriosPorPlantilla,
@@ -301,6 +439,7 @@ module.exports = {
   obtenerAuditoriaCompleta,
   obtenerMisAuditorias,
   obtenerTodasAuditorias,
-  crearAuditoriaConArchivo
+  crearAuditoriaConArchivo,
+  descargarAuditoriaPDF
 };
 

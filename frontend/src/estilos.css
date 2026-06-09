@@ -865,3 +865,10 @@ margin-top: 30px;
 .filters-card button {
   height: 44px;
 }
+
+.pdf-button {
+  width: auto;
+  padding: 14px 24px;
+  margin: 20px auto;
+  display: block;
+}

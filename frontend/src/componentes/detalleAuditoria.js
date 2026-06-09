@@ -19,7 +19,7 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       if (res.status === 401) {
@@ -38,6 +38,43 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
       setError("Error al conectar con el servidor.");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const descargarPDF = async () => {
+    try {
+      const res = await fetch(
+        `http://localhost:3001/api/auditorias/${auditoriaId}/pdf`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+
+      if (res.status === 401) {
+        logout();
+        return;
+      }
+
+      if (!res.ok) {
+        setError("No se pudo descargar el PDF.");
+        return;
+      }
+
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `auditoria-${auditoriaId}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      setError("Error al descargar el PDF.");
     }
   };
 
@@ -63,7 +100,7 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
 
   const puntajeObtenido = respuestas.reduce(
     (acc, r) => acc + (r.puntuacion || 0),
-    0
+    0,
   );
 
   const puntajeMaximo = respuestas.reduce((acc, r) => {
@@ -72,9 +109,7 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
   }, 0);
 
   const porcentaje =
-    puntajeMaximo > 0
-      ? Math.round((puntajeObtenido / puntajeMaximo) * 100)
-      : 0;
+    puntajeMaximo > 0 ? Math.round((puntajeObtenido / puntajeMaximo) * 100) : 0;
 
   return (
     <div className="detalle-auditoria-wrapper">
@@ -128,10 +163,13 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
             <p>
               <strong>Observación:</strong>{" "}
               {r.observacion || "Sin observaciones"}
-            </p>
-          </div>
+            </p>            
+          </div>          
         ))}
       </div>
+      <button className="new-audit-button" onClick={descargarPDF}>
+            Descargar PDF
+            </button>
     </div>
   );
 }
