@@ -22,6 +22,7 @@ router.post(
   "/archivo",
   verifyToken,
   upload.single("archivo"),
+  crearAuditoriaConArchivo
 );
 
 
