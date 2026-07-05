@@ -25,7 +25,7 @@ export default function GestionEmpresas({ logout }) {
 
   const cargarEmpresas = async () => {
     try {
-      const res = await fetch("http://localhost:3001/api/empresas", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/empresas`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -64,8 +64,8 @@ export default function GestionEmpresas({ logout }) {
       setLoading(true);
 
       const url = editandoId
-        ? `http://localhost:3001/api/empresas/${editandoId}`
-        : "http://localhost:3001/api/empresas";
+        ? `${process.env.REACT_APP_API_URL}/api/empresas/${editandoId}`
+        : `${process.env.REACT_APP_API_URL}/api/empresas`;
 
       const method = editandoId ? "PUT" : "POST";
 
@@ -114,7 +114,7 @@ export default function GestionEmpresas({ logout }) {
     if (!confirmar) return;
 
     try {
-      const res = await fetch(`http://localhost:3001/api/empresas/${id}`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/empresas/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

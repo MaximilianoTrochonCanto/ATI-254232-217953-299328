@@ -25,7 +25,7 @@ export default function ReclamoInforme() {
 
   const cargarEmpresas = async () => {
     try {
-      const res = await fetch("http://localhost:3001/api/empresas", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/empresas`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -45,7 +45,7 @@ export default function ReclamoInforme() {
 
   const cargarAuditorias = async () => {
     try {
-      const res = await fetch("http://localhost:3001/api/auditorias", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auditorias`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -87,7 +87,7 @@ export default function ReclamoInforme() {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/api/reclamos", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/reclamos`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

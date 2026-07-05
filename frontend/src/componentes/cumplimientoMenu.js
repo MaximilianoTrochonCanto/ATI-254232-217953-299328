@@ -42,7 +42,7 @@ export default function CumplimientoMenu({
   const cargarCriterios = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3001/api/auditorias/plantillas/${plantillaSeleccionada.id}/criterios`,
+        `${process.env.REACT_APP_API_URL}/api/auditorias/plantillas/${plantillaSeleccionada.id}/criterios`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -113,7 +113,7 @@ export default function CumplimientoMenu({
     try {
       setLoading(true);
 
-      const auditoriaRes = await fetch("http://localhost:3001/api/auditorias", {
+      const auditoriaRes = await fetch(`${process.env.REACT_APP_API_URL}/api/auditorias`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -194,7 +194,7 @@ export default function CumplimientoMenu({
       });
 
       const respuestasRes = await fetch(
-        `http://localhost:3001/api/auditorias/${auditoriaId}/respuestas`,
+        `${process.env.REACT_APP_API_URL}/api/auditorias/${auditoriaId}/respuestas`,
         {
           method: "POST",
           headers: {
@@ -248,7 +248,7 @@ export default function CumplimientoMenu({
   if (successScreen) {
     return (
       <div className="success-screen">
-        <img src="/success-audit.png" alt="Auditoría registrada" />
+        <img src="/success-audit.gif" alt="Auditoría registrada" />
 
         <h2>Auditoría registrada</h2>
 

@@ -14,7 +14,7 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
   const cargarDetalle = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3001/api/auditorias/${auditoriaId}`,
+        `${process.env.REACT_APP_API_URL}/api/auditorias/${auditoriaId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -44,7 +44,7 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
   const descargarPDF = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3001/api/auditorias/${auditoriaId}/pdf`,
+        `${process.env.REACT_APP_API_URL}/api/auditorias/${auditoriaId}/pdf`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

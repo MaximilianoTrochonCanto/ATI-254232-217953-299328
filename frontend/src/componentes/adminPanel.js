@@ -79,43 +79,49 @@ export default function AdminPanel({ logout }) {
         <h2>Panel Admin</h2>
 
         <button
+          className={seccion === "solicitudes" ? "active" : ""}
           onClick={() => cambiarSeccion("solicitudes")}
         >
           Solicitudes de acceso
         </button>
 
         <button
+          className={seccion === "empresas" ? "active" : ""}
           onClick={() => cambiarSeccion("empresas")}
         >
           Gestión de empresas
         </button>
 
         <button
+          className={seccion === "auditorias" ? "active" : ""}
           onClick={() => cambiarSeccion("auditorias")}
         >
           Todas las auditorías
         </button>
 
         <button
+          className={seccion === "nueva" ? "active" : ""}
           onClick={() => cambiarSeccion("nueva")}
         >
           Nueva auditoría
         </button>
 
         <button
+          className={seccion === "reclamos" ? "active" : ""}
           onClick={() => cambiarSeccion("reclamos")}
         >
           Reclamos / Informes
         </button>
 
         <button
+          className={seccion === "reportes" ? "active" : ""}
           onClick={() => cambiarSeccion("reportes")}
         >
           Reportes
         </button>
 
-        <button onClick={logout}>
-          Logout
+        <button className="logout-button" onClick={logout}>
+          Cerrar sesión
         </button>
       </aside>
 

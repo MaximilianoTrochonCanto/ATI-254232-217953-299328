@@ -28,7 +28,7 @@ export default function Register({ onSwitch }) {
   useEffect(() => {
     const cargarEmpresas = async () => {
       try {
-        const res = await fetch("http://localhost:3001/api/empresas/publicas");
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/empresas/publicas`);
         const data = await res.json();
 
         if (res.ok) {
@@ -138,7 +138,7 @@ export default function Register({ onSwitch }) {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:3001/api/auth/register", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

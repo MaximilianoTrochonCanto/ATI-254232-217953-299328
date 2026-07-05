@@ -872,3 +872,371 @@ margin-top: 30px;
   margin: 20px auto;
   display: block;
 }
+
+/* Renovación visual general */
+:root {
+  --primary-color: #256f54;
+  --primary-dark: #174b3a;
+  --accent-color: #d9912b;
+  --ink-color: #1d2935;
+  --muted-color: #607080;
+  --panel-color: #ffffff;
+  --page-color: #eef3f2;
+  --line-color: #dce6e3;
+  --danger-color: #b42335;
+  --shadow-soft: 0 16px 40px rgba(29, 41, 53, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background:
+    linear-gradient(135deg, rgba(37, 111, 84, 0.08), transparent 35%),
+    linear-gradient(225deg, rgba(217, 145, 43, 0.12), transparent 32%),
+    var(--page-color);
+  color: var(--ink-color);
+}
+
+.form-panel {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.card,
+.empresa-form,
+.empresa-card,
+.user-card,
+.plantilla-card,
+.criterio-card,
+.audit-card,
+.menu-count-card,
+.menu-card,
+.file-upload-card,
+.filters-card,
+.audit-summary,
+.notifications-panel,
+.respuesta-card {
+  border: 1px solid rgba(220, 230, 227, 0.95);
+  box-shadow: var(--shadow-soft);
+}
+
+.card {
+  width: min(420px, calc(100vw - 36px));
+  border-radius: 8px;
+  background: var(--panel-color);
+  padding: 34px;
+}
+
+.card h2,
+.switch,
+.empresas-wrapper h2,
+.empresa-form h3,
+.empresa-card h4,
+.plantilla-card h3,
+.criterio-card h4,
+.success-screen h2,
+.audit-card h3,
+.detalle-auditoria-wrapper h2,
+.cumplimiento-wrapper h2,
+.menu-card h3,
+.menu-count-card label {
+  color: var(--primary-dark);
+}
+
+input,
+select,
+textarea {
+  border: 1px solid var(--line-color);
+  background: #fbfdfc;
+  color: var(--ink-color);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(37, 111, 84, 0.65);
+  box-shadow: 0 0 0 4px rgba(37, 111, 84, 0.12);
+}
+
+button {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  font-weight: 700;
+  letter-spacing: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2f8064, #123f31);
+  box-shadow: 0 10px 22px rgba(23, 75, 58, 0.22);
+  transform: translateY(-1px);
+}
+
+.admin-layout {
+  background:
+    linear-gradient(135deg, rgba(37, 111, 84, 0.09), transparent 38%),
+    linear-gradient(225deg, rgba(217, 145, 43, 0.12), transparent 40%),
+    var(--page-color);
+}
+
+.admin-content {
+  padding: 88px 38px 44px;
+}
+
+.menu-toggle,
+.notification-bell {
+  box-shadow: 0 12px 28px rgba(29, 41, 53, 0.18);
+}
+
+.menu-toggle {
+  background: var(--panel-color);
+  color: var(--primary-dark);
+  border: 1px solid var(--line-color);
+}
+
+.notification-bell {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--panel-color);
+  border: 1px solid var(--line-color);
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  z-index: 900;
+}
+
+.sidebar {
+  background:
+    linear-gradient(180deg, rgba(37, 111, 84, 0.95), rgba(29, 41, 53, 0.98)),
+    url("../public/nutricion.jpg") center/cover;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.sidebar h2 {
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.sidebar button {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: white;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+  background: white;
+  color: var(--primary-dark);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+}
+
+.sidebar .logout-button {
+  margin-top: auto;
+  background: rgba(180, 35, 53, 0.92);
+}
+
+.sidebar .logout-button:hover {
+  background: #ffffff;
+  color: var(--danger-color);
+}
+
+.auditorias-wrapper > h2,
+.pending-wrapper h2,
+.audits-wrapper > h2,
+.empresas-wrapper h2 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 10px;
+}
+
+.auditorias-wrapper > p,
+.pending-wrapper > p,
+.audits-wrapper > p,
+.cumplimiento-wrapper > p {
+  color: var(--muted-color);
+  font-size: 17px;
+}
+
+.audit-type-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 1000px;
+  margin: 34px auto 0;
+}
+
+.audit-type-card {
+  min-height: 310px;
+  height: auto;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  background: var(--panel-color);
+  color: var(--ink-color);
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.audit-type-card:hover {
+  background: var(--panel-color);
+  color: var(--ink-color);
+  transform: translateY(-5px);
+}
+
+.audit-type-card img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  display: block;
+}
+
+.audit-type-card span {
+  display: block;
+  padding: 20px 20px 8px;
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.audit-type-card small {
+  display: block;
+  padding: 0 20px 22px;
+  color: var(--muted-color);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.plantillas-grid,
+.audits-grid,
+.empresas-list,
+.menus-list,
+.cards-grid {
+  align-items: stretch;
+}
+
+.plantilla-card,
+.audit-card,
+.empresa-card,
+.user-card,
+.menu-card,
+.respuesta-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--panel-color);
+}
+
+.plantilla-card {
+  padding: 0 22px 22px;
+  text-align: left;
+}
+
+.plantilla-image {
+  height: 126px;
+  margin: 0 -22px 20px;
+  background:
+    linear-gradient(135deg, rgba(23, 75, 58, 0.2), rgba(217, 145, 43, 0.14)),
+    url("../public/nutricion.jpg") center/cover;
+}
+
+.plantilla-card button,
+.audit-card button,
+.empresa-card-actions button,
+.filters-card button {
+  border-radius: 8px;
+}
+
+.plantilla-card p,
+.empresa-card p,
+.audit-card p,
+.respuesta-card p,
+.criterio-card p {
+  color: var(--muted-color);
+  line-height: 1.45;
+}
+
+.btn-secundario {
+  background: #475467;
+}
+
+.btn-secundario:hover {
+  background: #344054;
+}
+
+.btn-aprobar {
+  background: #1f7a5b;
+}
+
+.btn-rechazar {
+  background: var(--danger-color);
+}
+
+.audit-status {
+  background: #fff3df;
+  color: #9a5b00;
+}
+
+.summary-item strong,
+.summary-item.score strong {
+  color: var(--primary-dark);
+}
+
+.new-audit-button {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  box-shadow: 0 12px 28px rgba(37, 111, 84, 0.24);
+}
+
+.new-audit-button:hover {
+  background: linear-gradient(135deg, #2b7a5d, #c47b21);
+}
+
+.back-button {
+  color: var(--primary-dark);
+  border: 1px solid var(--line-color);
+}
+
+.empty-state {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  padding: 28px;
+}
+
+@media (max-width: 760px) {
+  .container,
+  .login-layout,
+  .register-layout {
+    flex-direction: column;
+  }
+
+  .image-panel,
+  .form-panel {
+    width: 100%;
+  }
+
+  .image-panel {
+    min-height: 220px;
+  }
+
+  .form-panel {
+    min-height: auto;
+    padding: 28px 16px;
+  }
+
+  .admin-content {
+    padding: 84px 18px 32px;
+  }
+
+  .audit-type-card {
+    min-height: 285px;
+  }
+
+  .empresa-actions,
+  .empresa-card-actions,
+  .user-actions {
+    flex-direction: column;
+  }
+}

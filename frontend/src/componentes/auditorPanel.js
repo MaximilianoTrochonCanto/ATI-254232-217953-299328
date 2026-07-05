@@ -24,6 +24,7 @@ export default function AuditorPanel({ logout }) {
         <h2>Panel Auditor</h2>
 
         <button
+          className={seccion === "mis-auditorias" ? "active" : ""}
           onClick={() => {
             setSeccion("mis-auditorias");
             setMenuOpen(false);
@@ -33,6 +34,7 @@ export default function AuditorPanel({ logout }) {
         </button>
 
         <button
+          className={seccion === "nueva" ? "active" : ""}
           onClick={() => {
             setSeccion("nueva");
             setMenuOpen(false);
@@ -42,6 +44,7 @@ export default function AuditorPanel({ logout }) {
         </button>
 
         <button
+          className={seccion === "reclamos" ? "active" : ""}
           onClick={() => {
             setSeccion("reclamos");
             setMenuOpen(false);
@@ -50,7 +53,9 @@ export default function AuditorPanel({ logout }) {
           Reclamos / Informes
         </button>
 
-        <button onClick={logout}>Logout</button>
+        <button className="logout-button" onClick={logout}>
+          Cerrar sesión
+        </button>
       </aside>
 
       <main className="admin-content">

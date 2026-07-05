@@ -20,6 +20,27 @@ export default function NuevaAuditoria() {
 
   const token = localStorage.getItem("token");
 
+  const categorias = [
+    {
+      id: "inocuidad",
+      titulo: "Inocuidad",
+      texto: "Controles de seguridad alimentaria, higiene y buenas prácticas.",
+      imagen: "/nutricion.jpg",
+    },
+    {
+      id: "servicios",
+      titulo: "Servicios",
+      texto: "Evaluación de comedor, viandas, atención y calidad del servicio.",
+      imagen: "/nutricion.png",
+    },
+    {
+      id: "SYSO",
+      titulo: "SYSO",
+      texto: "Revisión de seguridad ocupacional, prevención y condiciones de trabajo.",
+      imagen: "/logo.png",
+    },
+  ];
+
   useEffect(() => {
     cargarPlantillas();
     cargarEmpresas();
@@ -43,7 +64,7 @@ export default function NuevaAuditoria() {
   const cargarPlantillas = async () => {
     try {
       const res = await fetch(
-        "http://localhost:3001/api/auditorias/plantillas",
+        `${process.env.REACT_APP_API_URL}/api/auditorias/plantillas`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -65,7 +86,7 @@ export default function NuevaAuditoria() {
 
   const cargarEmpresas = async () => {
     try {
-      const res = await fetch("http://localhost:3001/api/empresas", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/empresas`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -103,7 +124,7 @@ export default function NuevaAuditoria() {
 
     try {
       const res = await fetch(
-        `http://localhost:3001/api/auditorias/plantillas/${plantilla.id}/criterios`,
+        `${process.env.REACT_APP_API_URL}/api/auditorias/plantillas/${plantilla.id}/criterios`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -144,7 +165,7 @@ export default function NuevaAuditoria() {
     }
 
     try {
-      const auditoriaRes = await fetch("http://localhost:3001/api/auditorias", {
+      const auditoriaRes = await fetch(`${process.env.REACT_APP_API_URL}/api/auditorias`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -191,7 +212,7 @@ export default function NuevaAuditoria() {
           : 0;
 
       const respuestasRes = await fetch(
-        `http://localhost:3001/api/auditorias/${auditoriaId}/respuestas`,
+        `${process.env.REACT_APP_API_URL}/api/auditorias/${auditoriaId}/respuestas`,
         {
           method: "POST",
           headers: {
@@ -257,7 +278,7 @@ export default function NuevaAuditoria() {
   if (auditoriaEnviada) {
     return (
       <div className="success-screen">
-        <img src="/success-audit.png" alt="Auditoría registrada" />
+        <img src="/success-audit.gif" alt="Auditoría registrada" />
 
         <h2>Auditoría registrada</h2>
         <p>La información quedó almacenada correctamente.</p>
@@ -313,11 +334,17 @@ export default function NuevaAuditoria() {
         <p>Seleccione el tipo de auditoría que desea realizar.</p>
 
         <div className="audit-type-grid">
-          <button onClick={() => setCategoria("inocuidad")}>Inocuidad</button>
-
-          <button onClick={() => setCategoria("servicios")}>Servicios</button>
-
-          <button onClick={() => setCategoria("SYSO")}>SYSO</button>
+          {categorias.map((opcion) => (
+            <button
+              className="audit-type-card"
+              key={opcion.id}
+              onClick={() => setCategoria(opcion.id)}
+            >
+              <img src={opcion.imagen} alt="" />
+              <span>{opcion.titulo}</span>
+              <small>{opcion.texto}</small>
+            </button>
+          ))}
         </div>
       </div>
     );
@@ -336,6 +363,7 @@ export default function NuevaAuditoria() {
         <div className="plantillas-grid">
           {plantillasFiltradas.map((p) => (
             <div className="plantilla-card" key={p.id}>
+              <div className="plantilla-image"></div>
               <h3>{p.nombre}</h3>
               <p>{p.descripcion}</p>
 

@@ -6,7 +6,7 @@ export default function PendingUsers({ logout, setNotificaciones }) {
   const token = localStorage.getItem("token");
 
   const cargarPendientes = async () => {
-    const res = await fetch("http://localhost:3001/api/admin/pendientes", {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/admin/pendientes`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -47,7 +47,7 @@ export default function PendingUsers({ logout, setNotificaciones }) {
   const aprobar = async (id) => {
   try {
     const res = await fetch(
-      `http://localhost:3001/api/admin/aprobar/${id}`,
+      `${process.env.REACT_APP_API_URL}/api/admin/aprobar/${id}`,
       {
         method: "PUT",
         headers: {
@@ -79,7 +79,7 @@ export default function PendingUsers({ logout, setNotificaciones }) {
 const rechazar = async (id) => {
   try {
     const res = await fetch(
-      `http://localhost:3001/api/admin/rechazar/${id}`,
+      `${process.env.REACT_APP_API_URL}/api/admin/rechazar/${id}`,
       {
         method: "PUT",
         headers: {

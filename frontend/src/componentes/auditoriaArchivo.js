@@ -35,7 +35,7 @@ export default function AuditoriaArchivo({ plantillaSeleccionada, empresas }) {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:3001/api/auditorias/archivo", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auditorias/archivo`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -43,13 +43,21 @@ export default function AuditoriaArchivo({ plantillaSeleccionada, empresas }) {
         body: formData,
       });
 
-      const data = await res.json();
+      const text = await res.text();
 
-      if (res.ok) {
-        setSuccessScreen(true);
-      } else {
-        setError(data.message || "No se pudo cargar el documento.");
-      }
+let data = {};
+
+try {
+  data = text ? JSON.parse(text) : {};
+} catch (error) {
+  data = {};
+}
+
+if (res.ok) {
+  setSuccessScreen(true);
+} else {
+  setError(data.message || "No se pudo cargar el documento.");
+}
     } catch (error) {
       setError("Error al conectar con el servidor.");
     } finally {
@@ -60,7 +68,7 @@ export default function AuditoriaArchivo({ plantillaSeleccionada, empresas }) {
   if (successScreen) {
     return (
       <div className="success-screen">
-        <img src="/success-audit.png" alt="Documento cargado" />
+        <img src="/success-audit.gif" alt="Documento cargado" />
 
         <h2>Documento cargado correctamente</h2>
 
