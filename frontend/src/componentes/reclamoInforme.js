@@ -1,27 +1,56 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-export default function ReclamoInforme() {
+const descuentosPorGravedad = {
+  reclamo: 2,
+  informe_observacion: 8,
+  informe_no_conformidad: 15,
+  baja: 2,
+  media: 5,
+  alta: 10,
+  critica: 20,
+};
+
+const obtenerDescuentoReclamo = (reclamo) =>
+  Number(reclamo.descuento_puntaje ?? descuentosPorGravedad[reclamo.gravedad]) ||
+  0;
+
+export default function ReclamoInforme({ modo = "auditor", logout }) {
   const [empresas, setEmpresas] = useState([]);
   const [auditorias, setAuditorias] = useState([]);
+  const [reclamos, setReclamos] = useState([]);
 
   const [empresaId, setEmpresaId] = useState("");
   const [auditoriaId, setAuditoriaId] = useState("");
   const [servicio, setServicio] = useState("");
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
-  const [gravedad, setGravedad] = useState("media");
+  const [gravedad, setGravedad] = useState("reclamo");
   const [observaciones, setObservaciones] = useState("");
   const [archivo, setArchivo] = useState(null);
 
   const [mensaje, setMensaje] = useState("");
   const [error, setError] = useState("");
+  const [filtroEmpresa, setFiltroEmpresa] = useState("");
+  const [filtroEstado, setFiltroEstado] = useState("");
 
   const token = localStorage.getItem("token");
+  const esAdmin = modo === "admin";
+  const archivoInputRef = useRef(null);
 
   useEffect(() => {
     cargarEmpresas();
     cargarAuditorias();
+    cargarReclamos();
   }, []);
+
+  const manejarNoAutorizado = (res) => {
+    if (res.status === 401 && logout) {
+      logout();
+      return true;
+    }
+
+    return false;
+  };
 
   const cargarEmpresas = async () => {
     try {
@@ -33,8 +62,10 @@ export default function ReclamoInforme() {
 
       const data = await res.json();
 
+      if (manejarNoAutorizado(res)) return;
+
       if (res.ok) {
-        setEmpresas(data);
+        setEmpresas(Array.isArray(data) ? data : []);
       } else {
         setError(data.message || "Error al cargar empresas.");
       }
@@ -45,7 +76,8 @@ export default function ReclamoInforme() {
 
   const cargarAuditorias = async () => {
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auditorias`, {
+      const endpoint = esAdmin ? "todas" : "mias";
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auditorias/${endpoint}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -53,11 +85,35 @@ export default function ReclamoInforme() {
 
       const data = await res.json();
 
+      if (manejarNoAutorizado(res)) return;
+
       if (res.ok) {
-        setAuditorias(data);
+        setAuditorias(Array.isArray(data) ? data : []);
       }
     } catch (error) {
-      console.log("Error al cargar auditorías.");
+      setError("Error al cargar auditorías.");
+    }
+  };
+
+  const cargarReclamos = async () => {
+    try {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/reclamos`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const data = await res.json();
+
+      if (manejarNoAutorizado(res)) return;
+
+      if (res.ok) {
+        setReclamos(Array.isArray(data) ? data : []);
+      } else {
+        setError(data.message || "Error al cargar reclamos.");
+      }
+    } catch (error) {
+      setError("Error al cargar reclamos.");
     }
   };
 
@@ -97,6 +153,8 @@ export default function ReclamoInforme() {
 
       const data = await res.json();
 
+      if (manejarNoAutorizado(res)) return;
+
       if (res.ok) {
         setMensaje("Reclamo / informe registrado correctamente.");
 
@@ -105,9 +163,13 @@ export default function ReclamoInforme() {
         setServicio("");
         setTitulo("");
         setDescripcion("");
-        setGravedad("media");
+        setGravedad("reclamo");
         setObservaciones("");
         setArchivo(null);
+        if (archivoInputRef.current) {
+          archivoInputRef.current.value = "";
+        }
+        cargarReclamos();
       } else {
         setError(data.message || "No se pudo registrar el reclamo.");
       }
@@ -116,17 +178,62 @@ export default function ReclamoInforme() {
     }
   };
 
+  const abrirAdjunto = async (reclamo) => {
+    setMensaje("");
+    setError("");
+
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/reclamos/${reclamo.id}/adjunto`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      if (manejarNoAutorizado(res)) return;
+
+      if (!res.ok) {
+        setError("No se pudo abrir el adjunto.");
+        return;
+      }
+
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      window.open(url, "_blank", "noopener,noreferrer");
+      setTimeout(() => window.URL.revokeObjectURL(url), 60000);
+    } catch (error) {
+      setError("Error al abrir el adjunto.");
+    }
+  };
+
   const auditoriasFiltradas = auditorias.filter(
     (a) => Number(a.empresa_id) === Number(empresaId)
   );
 
+  const reclamosFiltrados = useMemo(() => {
+    return reclamos.filter((reclamo) => {
+      const coincideEmpresa =
+        !filtroEmpresa || Number(reclamo.empresa_id) === Number(filtroEmpresa);
+      const coincideEstado = !filtroEstado || reclamo.estado === filtroEstado;
+
+      return coincideEmpresa && coincideEstado;
+    });
+  }, [reclamos, filtroEmpresa, filtroEstado]);
+
+  const formatearFecha = (fecha) => {
+    if (!fecha) return "Sin fecha";
+
+    return new Date(fecha).toLocaleDateString();
+  };
+
   return (
     <div className="auditorias-wrapper">
-      <h2>Agregar reclamo / informe</h2>
+      <h2>Reclamos / informes</h2>
 
       <p>
-        Registre un reclamo específico asociado a un servicio. Puede vincularse
-        a una auditoría existente o quedar pendiente para futuras evaluaciones.
+        Registre reclamos asociados a servicios y consulte el historial cargado.
       </p>
 
       <form className="auditoria-form" onSubmit={guardarReclamo}>
@@ -177,16 +284,18 @@ export default function ReclamoInforme() {
         />
 
         <select value={gravedad} onChange={(e) => setGravedad(e.target.value)}>
-          <option value="baja">Baja</option>
-          <option value="media">Media</option>
-          <option value="alta">Alta</option>
-          <option value="critica">Crítica</option>
+          <option value="reclamo">Reclamo (-2 pts)</option>
+          <option value="informe_observacion">Informe de observación (-8 pts)</option>
+          <option value="informe_no_conformidad">
+            Informe de no conformidad (-15 pts)
+          </option>
         </select>
 
         <input
+          ref={archivoInputRef}
           type="file"
           accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
-          onChange={(e) => setArchivo(e.target.files[0])}
+          onChange={(e) => setArchivo(e.target.files[0] || null)}
         />
 
         <textarea
@@ -202,6 +311,104 @@ export default function ReclamoInforme() {
           Guardar reclamo / informe
         </button>
       </form>
+
+      <section className="reclamos-section">
+        <div className="reclamos-header">
+          <h3>{esAdmin ? "Todos los reclamos" : "Mis reclamos vinculados"}</h3>
+          <button type="button" onClick={cargarReclamos}>
+            Actualizar
+          </button>
+        </div>
+
+        <div className="filters-card reclamos-filters">
+          {esAdmin && (
+            <select
+              value={filtroEmpresa}
+              onChange={(e) => setFiltroEmpresa(e.target.value)}
+            >
+              <option value="">Todas las empresas</option>
+
+              {empresas.map((empresa) => (
+                <option key={empresa.id} value={empresa.id}>
+                  {empresa.nombre}
+                </option>
+              ))}
+            </select>
+          )}
+
+          <select
+            value={filtroEstado}
+            onChange={(e) => setFiltroEstado(e.target.value)}
+          >
+            <option value="">Todos los estados</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="en_revision">En revisión</option>
+            <option value="resuelto">Resuelto</option>
+          </select>
+        </div>
+
+        {reclamosFiltrados.length === 0 ? (
+          <div className="empty-state">
+            <h3>No hay reclamos para mostrar</h3>
+            <p>Los reclamos registrados aparecerán en esta sección.</p>
+          </div>
+        ) : (
+          <div className="reclamos-grid">
+            {reclamosFiltrados.map((reclamo) => (
+              <article className="reclamo-card" key={reclamo.id}>
+                <div className="reclamo-card-header">
+                  <div>
+                    <h4>{reclamo.titulo}</h4>
+                    <span>{reclamo.empresa_nombre || "Sin empresa"}</span>
+                  </div>
+
+                  <strong className={`reclamo-severity severity-${reclamo.gravedad}`}>
+                    {String(reclamo.gravedad || "").replaceAll("_", " ")}
+                  </strong>
+                </div>
+
+                <p>{reclamo.descripcion}</p>
+
+                <div className="reclamo-meta">
+                  <span>Servicio: {reclamo.servicio}</span>
+                  <span>Estado: {reclamo.estado || "pendiente"}</span>
+                  <span>
+                    Ponderación: -{obtenerDescuentoReclamo(reclamo)} pts
+                  </span>
+                  <span>Fecha: {formatearFecha(reclamo.fecha_creacion)}</span>
+                  <span>
+                    Auditoría:{" "}
+                    {reclamo.auditoria_id
+                      ? `#${reclamo.auditoria_id}`
+                      : "Sin vincular"}
+                  </span>
+                  {esAdmin && (
+                    <span>Auditor: {reclamo.auditor_nombre || "Sin asignar"}</span>
+                  )}
+                </div>
+
+                {reclamo.archivo_url && (
+                  <button
+                    className="reclamo-adjunto-button"
+                    type="button"
+                    onClick={() => abrirAdjunto(reclamo)}
+                  >
+                    Ver adjunto
+                  </button>
+                )}
+
+                {reclamo.observaciones && (
+                  <div className="reclamo-observaciones">
+                    {reclamo.observaciones}
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        )}
+      </section>
     </div>
   );
 }
+
+

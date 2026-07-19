@@ -12,8 +12,10 @@ const {
   obtenerAuditoriaCompleta,
   obtenerMisAuditorias,
   obtenerTodasAuditorias,
+  obtenerReportesAuditorias,
   crearAuditoriaConArchivo,
-  descargarAuditoriaPDF
+  descargarAuditoriaPDF,
+  descargarAuditoriaDOCX
 } = require("../controladores/auditoriaControlador");
 
 const upload = require("../middlewares/uploadMiddleware");
@@ -31,12 +33,14 @@ router.get("/plantillas/:id/criterios", verifyToken, obtenerCriteriosPorPlantill
 
 router.get("/mias", verifyToken, obtenerMisAuditorias);
 router.get("/todas", verifyToken, authorizeRoles("admin"), obtenerTodasAuditorias);
+router.get("/reportes", verifyToken, obtenerReportesAuditorias);
 
 router.post("/", verifyToken, crearAuditoria);
 router.post("/:id/respuestas", verifyToken, guardarRespuestas);
 
 // Esta siempre al final
 router.get("/:id/pdf", verifyToken, descargarAuditoriaPDF);
+router.get("/:id/docx", verifyToken, descargarAuditoriaDOCX);
 router.get("/:id", verifyToken, obtenerAuditoriaCompleta);
 
 

@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 
+const formatearFecha = (fecha) => {
+  if (!fecha) return "-";
+  const partes = String(fecha).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (partes) return `${partes[3]}/${partes[2]}/${partes[1]}`;
+  return new Date(fecha).toLocaleDateString("es-UY");
+};
+
 export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
   const [detalle, setDetalle] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -78,6 +85,50 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
     }
   };
 
+  const descargarDOCX = async () => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/auditorias/${auditoriaId}/docx`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+
+      if (res.status === 401) {
+        logout();
+        return;
+      }
+
+      if (!res.ok) {
+        const contentType = res.headers.get("content-type") || "";
+        const data = contentType.includes("application/json")
+          ? await res.json().catch(() => null)
+          : null;
+        setError(
+          data?.message ||
+            (res.status === 404
+              ? "La descarga DOCX todavía no está disponible en el servidor."
+              : "No se pudo descargar el DOCX."),
+        );
+        return;
+      }
+
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `auditoria-${auditoriaId}.docx`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      setError("Error al descargar el DOCX.");
+    }
+  };
+
   if (loading) {
     return (
       <div className="empty-state">
@@ -97,6 +148,7 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
 
   const auditoria = detalle.auditoria;
   const respuestas = detalle.respuestas;
+  const reclamos = detalle.reclamos || [];
 
   const puntajeObtenido = respuestas.reduce(
     (acc, r) => acc + (r.puntuacion || 0),
@@ -110,6 +162,15 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
 
   const porcentaje =
     puntajeMaximo > 0 ? Math.round((puntajeObtenido / puntajeMaximo) * 100) : 0;
+  const descuentoReclamos = reclamos.reduce(
+    (acc, reclamo) => acc + (Number(reclamo.descuento_puntaje) || 0),
+    0,
+  );
+  const puntaje = detalle.puntaje || {
+    porcentajeBase: porcentaje,
+    descuentoReclamos,
+    porcentajeFinal: Math.max(0, Math.round(porcentaje - descuentoReclamos)),
+  };
 
   return (
     <div className="detalle-auditoria-wrapper">
@@ -132,7 +193,7 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
 
         <div className="summary-item">
           <span>Fecha</span>
-          <strong>{new Date(auditoria.fecha).toLocaleDateString()}</strong>
+          <strong>{formatearFecha(auditoria.fecha)}</strong>
         </div>
 
         <div className="summary-item">
@@ -141,10 +202,47 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
         </div>
 
         <div className="summary-item score">
-          <span>Resultado</span>
-          <strong>{porcentaje}%</strong>
+          <span>Resultado final</span>
+          <strong>{puntaje.porcentajeFinal}%</strong>
+        </div>
+
+        <div className="summary-item">
+          <span>Resultado base</span>
+          <strong>{puntaje.porcentajeBase}%</strong>
+        </div>
+
+        <div className="summary-item">
+          <span>Descuento reclamos/informes</span>
+          <strong>-{puntaje.descuentoReclamos} pts</strong>
         </div>
       </div>
+
+      {reclamos.length > 0 && (
+        <div className="respuestas-list">
+          <h3>Reclamos / informes vinculados</h3>
+
+          {reclamos.map((reclamo) => (
+            <div className="respuesta-card" key={reclamo.id}>
+              <h4>{reclamo.titulo}</h4>
+
+              <p>
+                <strong>Gravedad:</strong> {reclamo.gravedad || "-"}
+              </p>
+
+              <p>
+                <strong>Estado:</strong> {reclamo.estado || "-"}
+              </p>
+
+              <p>
+                <strong>Descuento aplicado:</strong>{" "}
+                -{Number(reclamo.descuento_puntaje) || 0} pts
+              </p>
+
+              <p>{reclamo.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      )}
 
       <div className="respuestas-list">
         {respuestas.map((r) => (
@@ -168,8 +266,11 @@ export default function DetalleAuditoria({ auditoriaId, volver, logout }) {
         ))}
       </div>
       <button className="new-audit-button" onClick={descargarPDF}>
-            Descargar PDF
-            </button>
+        Descargar PDF
+      </button>
+      <button className="new-audit-button" onClick={descargarDOCX}>
+        Descargar DOCX editable
+      </button>
     </div>
   );
 }

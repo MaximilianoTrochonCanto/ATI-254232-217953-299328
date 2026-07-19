@@ -2,10 +2,16 @@ import { useState } from "react";
 import ListaAuditorias from "./listaAuditorias";
 import NuevaAuditoria from "./nuevaAuditoria";
 import ReclamoInforme from "./reclamoInforme";
+import ReportesAuditorias from "./reportesAuditorias";
 
 export default function AuditorPanel({ logout }) {
   const [seccion, setSeccion] = useState("mis-auditorias");
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const cambiarSeccion = (nuevaSeccion) => {
+    setSeccion(nuevaSeccion);
+    setMenuOpen(false);
+  };
 
   return (
     <div className="admin-layout">
@@ -25,32 +31,30 @@ export default function AuditorPanel({ logout }) {
 
         <button
           className={seccion === "mis-auditorias" ? "active" : ""}
-          onClick={() => {
-            setSeccion("mis-auditorias");
-            setMenuOpen(false);
-          }}
+          onClick={() => cambiarSeccion("mis-auditorias")}
         >
           Mis auditorías
         </button>
 
         <button
           className={seccion === "nueva" ? "active" : ""}
-          onClick={() => {
-            setSeccion("nueva");
-            setMenuOpen(false);
-          }}
+          onClick={() => cambiarSeccion("nueva")}
         >
-          Nueva auditoría
+          Nueva auditoría/evaluación
         </button>
 
         <button
           className={seccion === "reclamos" ? "active" : ""}
-          onClick={() => {
-            setSeccion("reclamos");
-            setMenuOpen(false);
-          }}
+          onClick={() => cambiarSeccion("reclamos")}
         >
           Reclamos / Informes
+        </button>
+
+        <button
+          className={seccion === "reportes" ? "active" : ""}
+          onClick={() => cambiarSeccion("reportes")}
+        >
+          Reportes
         </button>
 
         <button className="logout-button" onClick={logout}>
@@ -65,7 +69,11 @@ export default function AuditorPanel({ logout }) {
 
         {seccion === "nueva" && <NuevaAuditoria />}
 
-        {seccion === "reclamos" && <ReclamoInforme />}
+        {seccion === "reclamos" && <ReclamoInforme modo="auditor" logout={logout} />}
+
+        {seccion === "reportes" && (
+          <ReportesAuditorias modo="auditor" logout={logout} />
+        )}
       </main>
     </div>
   );

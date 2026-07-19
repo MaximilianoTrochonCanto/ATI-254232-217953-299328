@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import DetalleAuditoria from "./detalleAuditoria";
 
+const formatearFecha = (fecha) => {
+  if (!fecha) return "-";
+  const partes = String(fecha).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (partes) return `${partes[3]}/${partes[2]}/${partes[1]}`;
+  return new Date(fecha).toLocaleDateString("es-UY");
+};
+
 export default function ListaAuditorias({ modo = "auditor", logout }) {
   const [auditorias, setAuditorias] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -187,7 +194,7 @@ export default function ListaAuditorias({ modo = "auditor", logout }) {
 
               <p>
                 <strong>Fecha:</strong>{" "}
-                {new Date(a.fecha).toLocaleDateString()}
+                {formatearFecha(a.fecha)}
               </p>
 
               {modo === "admin" && (

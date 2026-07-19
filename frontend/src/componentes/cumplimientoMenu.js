@@ -27,8 +27,8 @@ export default function CumplimientoMenu({
       guarnicionPuntaje: "",
       postre: "",
       postrePuntaje: "",
-      bebida: "",
-      bebidaPuntaje: "",
+      ensalada: "",
+      ensaladaPuntaje: "",
       libreGluten: false,
       libreGlutenPuntaje: "",
       observaciones: "",
@@ -82,6 +82,10 @@ export default function CumplimientoMenu({
 
   const actualizarMenu = (index, campo, valor) => {
     const copia = [...menus];
+
+    if (!copia[index]) {
+      return;
+    }
 
     copia[index] = {
       ...copia[index],
@@ -139,7 +143,8 @@ export default function CumplimientoMenu({
       const criterioPlato = obtenerCriterio("Plato principal");
       const criterioGuarnicion = obtenerCriterio("Guarnición");
       const criterioPostre = obtenerCriterio("Postre");
-      const criterioBebida = obtenerCriterio("Bebida");
+      const criterioEnsalada =
+        obtenerCriterio("Ensalada") || obtenerCriterio("Bebida");
       const criterioLibreGluten = obtenerCriterio("Libre de gluten");
 
       const respuestasArray = [];
@@ -172,11 +177,11 @@ export default function CumplimientoMenu({
           });
         }
 
-        if (criterioBebida) {
+        if (criterioEnsalada) {
           respuestasArray.push({
-            criterio_id: criterioBebida.id,
-            puntuacion: Number(menu.bebidaPuntaje || 0),
-            observacion: `Menú ${menu.numero} - Bebida: ${menu.bebida || "Sin detalle"}`,
+            criterio_id: criterioEnsalada.id,
+            puntuacion: Number(menu.ensaladaPuntaje || 0),
+            observacion: `Menú ${menu.numero} - Ensalada: ${menu.ensalada || "Sin detalle"}`,
             no_verificable: false,
           });
         }
@@ -411,20 +416,20 @@ export default function CumplimientoMenu({
             </select>
 
             <input
-              placeholder="Bebida"
-              value={menu.bebida}
+              placeholder="Ensalada"
+              value={menu.ensalada}
               onChange={(e) =>
-                actualizarMenu(index, "bebida", e.target.value)
+                actualizarMenu(index, "ensalada", e.target.value)
               }
             />
 
             <select
-              value={menu.bebidaPuntaje}
+              value={menu.ensaladaPuntaje}
               onChange={(e) =>
-                actualizarMenu(index, "bebidaPuntaje", e.target.value)
+                actualizarMenu(index, "ensaladaPuntaje", e.target.value)
               }
             >
-              <option value="">Puntaje bebida</option>
+              <option value="">Puntaje ensalada</option>
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>

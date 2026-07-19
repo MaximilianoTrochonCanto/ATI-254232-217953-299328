@@ -1,0 +1,2786 @@
+{
+  "createdAt": "2026-07-18T23:21:22.040Z",
+  "changes": [
+    {
+      "id": 13,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 1,
+      "field": "seccion",
+      "before": "1- SECTOR RECEPCI�\u001cN-PASILLO INGRESO",
+      "after": "1- SECTOR RECEPCIÓN-PASILLO INGRESO"
+    },
+    {
+      "id": 13,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 1,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 14,
+      "plantilla_id": 3,
+      "numero": 2,
+      "orden": 2,
+      "field": "texto",
+      "before": "Las condiciones de higiene y/u orden del lavamanos y su �rea es adecuada?",
+      "after": "Las condiciones de higiene y/u orden del lavamanos y su área es adecuada?"
+    },
+    {
+      "id": 14,
+      "plantilla_id": 3,
+      "numero": 2,
+      "orden": 2,
+      "field": "seccion",
+      "before": "1- SECTOR RECEPCI�\u001cN-PASILLO INGRESO",
+      "after": "1- SECTOR RECEPCIÓN-PASILLO INGRESO"
+    },
+    {
+      "id": 15,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 3,
+      "field": "seccion",
+      "before": "1- SECTOR RECEPCI�\u001cN-PASILLO INGRESO",
+      "after": "1- SECTOR RECEPCIÓN-PASILLO INGRESO"
+    },
+    {
+      "id": 16,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 4,
+      "field": "seccion",
+      "before": "1- SECTOR RECEPCI�\u001cN-PASILLO INGRESO",
+      "after": "1- SECTOR RECEPCIÓN-PASILLO INGRESO"
+    },
+    {
+      "id": 17,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 5,
+      "field": "seccion",
+      "before": "1- SECTOR RECEPCI�\u001cN-PASILLO INGRESO",
+      "after": "1- SECTOR RECEPCIÓN-PASILLO INGRESO"
+    },
+    {
+      "id": 17,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 5,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 18,
+      "plantilla_id": 3,
+      "numero": 6,
+      "orden": 6,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 18,
+      "plantilla_id": 3,
+      "numero": 6,
+      "orden": 6,
+      "field": "seccion",
+      "before": "1- SECTOR RECEPCI�\u001cN-PASILLO INGRESO",
+      "after": "1- SECTOR RECEPCIÓN-PASILLO INGRESO"
+    },
+    {
+      "id": 19,
+      "plantilla_id": 3,
+      "numero": 7,
+      "orden": 7,
+      "field": "seccion",
+      "before": "1- SECTOR RECEPCI�\u001cN-PASILLO INGRESO",
+      "after": "1- SECTOR RECEPCIÓN-PASILLO INGRESO"
+    },
+    {
+      "id": 20,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 8,
+      "field": "seccion",
+      "before": "1- SECTOR RECEPCI�\u001cN-PASILLO INGRESO",
+      "after": "1- SECTOR RECEPCIÓN-PASILLO INGRESO"
+    },
+    {
+      "id": 20,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 8,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 21,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 9,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 21,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 9,
+      "field": "seccion",
+      "before": "1- SECTOR RECEPCI�\u001cN-PASILLO INGRESO",
+      "after": "1- SECTOR RECEPCIÓN-PASILLO INGRESO"
+    },
+    {
+      "id": 22,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 10,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 23,
+      "plantilla_id": 3,
+      "numero": 11,
+      "orden": 11,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 24,
+      "plantilla_id": 3,
+      "numero": 12,
+      "orden": 12,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 26,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 14,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 27,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 15,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 28,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 16,
+      "field": "seccion",
+      "before": "3- CÁMARAS DE ALIMENTOS Y T�aNEL DE ABATIMIENTO",
+      "after": "3- CÁMARAS DE ALIMENTOS Y TÚNEL DE ABATIMIENTO"
+    },
+    {
+      "id": 28,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 16,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 29,
+      "plantilla_id": 3,
+      "numero": 2,
+      "orden": 17,
+      "field": "seccion",
+      "before": "3- CÁMARAS DE ALIMENTOS Y T�aNEL DE ABATIMIENTO",
+      "after": "3- CÁMARAS DE ALIMENTOS Y TÚNEL DE ABATIMIENTO"
+    },
+    {
+      "id": 29,
+      "plantilla_id": 3,
+      "numero": 2,
+      "orden": 17,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 30,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 18,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 30,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 18,
+      "field": "seccion",
+      "before": "3- CÁMARAS DE ALIMENTOS Y T�aNEL DE ABATIMIENTO",
+      "after": "3- CÁMARAS DE ALIMENTOS Y TÚNEL DE ABATIMIENTO"
+    },
+    {
+      "id": 31,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 19,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 32,
+      "plantilla_id": 3,
+      "numero": 20,
+      "orden": 20,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 33,
+      "plantilla_id": 3,
+      "numero": 21,
+      "orden": 21,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 35,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 23,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 36,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 24,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 37,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 25,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 38,
+      "plantilla_id": 3,
+      "numero": 2,
+      "orden": 26,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 39,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 27,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 40,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 28,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 40,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 28,
+      "field": "seccion",
+      "before": "6- SECTOR LAVADO Y DESINFECCI�\u001cN DE FRUTAS Y VERDURAS-HUEVOS",
+      "after": "6- SECTOR LAVADO Y DESINFECCIÓN DE FRUTAS Y VERDURAS-HUEVOS"
+    },
+    {
+      "id": 41,
+      "plantilla_id": 3,
+      "numero": 29,
+      "orden": 29,
+      "field": "seccion",
+      "before": "6- SECTOR LAVADO Y DESINFECCI�\u001cN DE FRUTAS Y VERDURAS-HUEVOS",
+      "after": "6- SECTOR LAVADO Y DESINFECCIÓN DE FRUTAS Y VERDURAS-HUEVOS"
+    },
+    {
+      "id": 41,
+      "plantilla_id": 3,
+      "numero": 29,
+      "orden": 29,
+      "field": "texto",
+      "before": "Las condiciones de higiene y/u orden del lavamanos y su �rea es adecuada?",
+      "after": "Las condiciones de higiene y/u orden del lavamanos y su área es adecuada?"
+    },
+    {
+      "id": 42,
+      "plantilla_id": 3,
+      "numero": 30,
+      "orden": 30,
+      "field": "seccion",
+      "before": "6- SECTOR LAVADO Y DESINFECCI�\u001cN DE FRUTAS Y VERDURAS-HUEVOS",
+      "after": "6- SECTOR LAVADO Y DESINFECCIÓN DE FRUTAS Y VERDURAS-HUEVOS"
+    },
+    {
+      "id": 43,
+      "plantilla_id": 3,
+      "numero": 31,
+      "orden": 31,
+      "field": "seccion",
+      "before": "6- SECTOR LAVADO Y DESINFECCI�\u001cN DE FRUTAS Y VERDURAS-HUEVOS",
+      "after": "6- SECTOR LAVADO Y DESINFECCIÓN DE FRUTAS Y VERDURAS-HUEVOS"
+    },
+    {
+      "id": 44,
+      "plantilla_id": 3,
+      "numero": 32,
+      "orden": 32,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 44,
+      "plantilla_id": 3,
+      "numero": 32,
+      "orden": 32,
+      "field": "seccion",
+      "before": "6- SECTOR LAVADO Y DESINFECCI�\u001cN DE FRUTAS Y VERDURAS-HUEVOS",
+      "after": "6- SECTOR LAVADO Y DESINFECCIÓN DE FRUTAS Y VERDURAS-HUEVOS"
+    },
+    {
+      "id": 45,
+      "plantilla_id": 3,
+      "numero": 33,
+      "orden": 33,
+      "field": "seccion",
+      "before": "6- SECTOR LAVADO Y DESINFECCI�\u001cN DE FRUTAS Y VERDURAS-HUEVOS",
+      "after": "6- SECTOR LAVADO Y DESINFECCIÓN DE FRUTAS Y VERDURAS-HUEVOS"
+    },
+    {
+      "id": 45,
+      "plantilla_id": 3,
+      "numero": 33,
+      "orden": 33,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 46,
+      "plantilla_id": 3,
+      "numero": 34,
+      "orden": 34,
+      "field": "seccion",
+      "before": "6- SECTOR LAVADO Y DESINFECCI�\u001cN DE FRUTAS Y VERDURAS-HUEVOS",
+      "after": "6- SECTOR LAVADO Y DESINFECCIÓN DE FRUTAS Y VERDURAS-HUEVOS"
+    },
+    {
+      "id": 47,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 35,
+      "field": "seccion",
+      "before": "6- SECTOR LAVADO Y DESINFECCI�\u001cN DE FRUTAS Y VERDURAS-HUEVOS",
+      "after": "6- SECTOR LAVADO Y DESINFECCIÓN DE FRUTAS Y VERDURAS-HUEVOS"
+    },
+    {
+      "id": 47,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 35,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 48,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 36,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 48,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 36,
+      "field": "seccion",
+      "before": "6- SECTOR LAVADO Y DESINFECCI�\u001cN DE FRUTAS Y VERDURAS-HUEVOS",
+      "after": "6- SECTOR LAVADO Y DESINFECCIÓN DE FRUTAS Y VERDURAS-HUEVOS"
+    },
+    {
+      "id": 49,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 37,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 49,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 37,
+      "field": "seccion",
+      "before": "7- SECTORES DE MANIPULACI�\u001cN CON AMBIENTE CONTROLADO",
+      "after": "7- SECTORES DE MANIPULACIÓN CON AMBIENTE CONTROLADO"
+    },
+    {
+      "id": 50,
+      "plantilla_id": 3,
+      "numero": 38,
+      "orden": 38,
+      "field": "seccion",
+      "before": "7- SECTORES DE MANIPULACI�\u001cN CON AMBIENTE CONTROLADO",
+      "after": "7- SECTORES DE MANIPULACIÓN CON AMBIENTE CONTROLADO"
+    },
+    {
+      "id": 50,
+      "plantilla_id": 3,
+      "numero": 38,
+      "orden": 38,
+      "field": "texto",
+      "before": "Las condiciones de higiene y/u orden del lavamanos y su �rea es adecuada?",
+      "after": "Las condiciones de higiene y/u orden del lavamanos y su área es adecuada?"
+    },
+    {
+      "id": 51,
+      "plantilla_id": 3,
+      "numero": 39,
+      "orden": 39,
+      "field": "seccion",
+      "before": "7- SECTORES DE MANIPULACI�\u001cN CON AMBIENTE CONTROLADO",
+      "after": "7- SECTORES DE MANIPULACIÓN CON AMBIENTE CONTROLADO"
+    },
+    {
+      "id": 52,
+      "plantilla_id": 3,
+      "numero": 40,
+      "orden": 40,
+      "field": "seccion",
+      "before": "7- SECTORES DE MANIPULACI�\u001cN CON AMBIENTE CONTROLADO",
+      "after": "7- SECTORES DE MANIPULACIÓN CON AMBIENTE CONTROLADO"
+    },
+    {
+      "id": 53,
+      "plantilla_id": 3,
+      "numero": 41,
+      "orden": 41,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 53,
+      "plantilla_id": 3,
+      "numero": 41,
+      "orden": 41,
+      "field": "seccion",
+      "before": "7- SECTORES DE MANIPULACI�\u001cN CON AMBIENTE CONTROLADO",
+      "after": "7- SECTORES DE MANIPULACIÓN CON AMBIENTE CONTROLADO"
+    },
+    {
+      "id": 54,
+      "plantilla_id": 3,
+      "numero": 42,
+      "orden": 42,
+      "field": "seccion",
+      "before": "7- SECTORES DE MANIPULACI�\u001cN CON AMBIENTE CONTROLADO",
+      "after": "7- SECTORES DE MANIPULACIÓN CON AMBIENTE CONTROLADO"
+    },
+    {
+      "id": 54,
+      "plantilla_id": 3,
+      "numero": 42,
+      "orden": 42,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 55,
+      "plantilla_id": 3,
+      "numero": 43,
+      "orden": 43,
+      "field": "seccion",
+      "before": "7- SECTORES DE MANIPULACI�\u001cN CON AMBIENTE CONTROLADO",
+      "after": "7- SECTORES DE MANIPULACIÓN CON AMBIENTE CONTROLADO"
+    },
+    {
+      "id": 56,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 44,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 56,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 44,
+      "field": "seccion",
+      "before": "7- SECTORES DE MANIPULACI�\u001cN CON AMBIENTE CONTROLADO",
+      "after": "7- SECTORES DE MANIPULACIÓN CON AMBIENTE CONTROLADO"
+    },
+    {
+      "id": 57,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 45,
+      "field": "seccion",
+      "before": "7- SECTORES DE MANIPULACI�\u001cN CON AMBIENTE CONTROLADO",
+      "after": "7- SECTORES DE MANIPULACIÓN CON AMBIENTE CONTROLADO"
+    },
+    {
+      "id": 57,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 45,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 58,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 46,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 59,
+      "plantilla_id": 3,
+      "numero": 47,
+      "orden": 47,
+      "field": "texto",
+      "before": "Las condiciones de higiene y/u orden del lavamanos y su �rea es adecuada?",
+      "after": "Las condiciones de higiene y/u orden del lavamanos y su área es adecuada?"
+    },
+    {
+      "id": 62,
+      "plantilla_id": 3,
+      "numero": 50,
+      "orden": 50,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 63,
+      "plantilla_id": 3,
+      "numero": 51,
+      "orden": 51,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 65,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 53,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 66,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 54,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 67,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 55,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 68,
+      "plantilla_id": 3,
+      "numero": 56,
+      "orden": 56,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 69,
+      "plantilla_id": 3,
+      "numero": 57,
+      "orden": 57,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 71,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 59,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 72,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 60,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 73,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 61,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 74,
+      "plantilla_id": 3,
+      "numero": 62,
+      "orden": 62,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 75,
+      "plantilla_id": 3,
+      "numero": 63,
+      "orden": 63,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 77,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 65,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 78,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 66,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 79,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 67,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 80,
+      "plantilla_id": 3,
+      "numero": 68,
+      "orden": 68,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 81,
+      "plantilla_id": 3,
+      "numero": 69,
+      "orden": 69,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 83,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 71,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 84,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 72,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 85,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 73,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 86,
+      "plantilla_id": 3,
+      "numero": 74,
+      "orden": 74,
+      "field": "texto",
+      "before": "Las condiciones de higiene y/u orden del lavamanos y su �rea es adecuada?",
+      "after": "Las condiciones de higiene y/u orden del lavamanos y su área es adecuada?"
+    },
+    {
+      "id": 89,
+      "plantilla_id": 3,
+      "numero": 77,
+      "orden": 77,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 90,
+      "plantilla_id": 3,
+      "numero": 78,
+      "orden": 78,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 92,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 80,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 93,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 81,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 94,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 82,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 95,
+      "plantilla_id": 3,
+      "numero": 83,
+      "orden": 83,
+      "field": "texto",
+      "before": "Las condiciones de higiene y/u orden del lavamanos y su �rea es adecuada?",
+      "after": "Las condiciones de higiene y/u orden del lavamanos y su área es adecuada?"
+    },
+    {
+      "id": 98,
+      "plantilla_id": 3,
+      "numero": 86,
+      "orden": 86,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 99,
+      "plantilla_id": 3,
+      "numero": 87,
+      "orden": 87,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 101,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 89,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 102,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 90,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 103,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 91,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 104,
+      "plantilla_id": 3,
+      "numero": 92,
+      "orden": 92,
+      "field": "texto",
+      "before": "Las condiciones de higiene y/u orden del lavamanos y su �rea es adecuada?",
+      "after": "Las condiciones de higiene y/u orden del lavamanos y su área es adecuada?"
+    },
+    {
+      "id": 107,
+      "plantilla_id": 3,
+      "numero": 95,
+      "orden": 95,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 108,
+      "plantilla_id": 3,
+      "numero": 96,
+      "orden": 96,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 110,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 98,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 111,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 99,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 112,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 100,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 113,
+      "plantilla_id": 3,
+      "numero": 101,
+      "orden": 101,
+      "field": "texto",
+      "before": "Las condiciones de higiene y/u orden del lavamanos y su �rea es adecuada?",
+      "after": "Las condiciones de higiene y/u orden del lavamanos y su área es adecuada?"
+    },
+    {
+      "id": 116,
+      "plantilla_id": 3,
+      "numero": 104,
+      "orden": 104,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 117,
+      "plantilla_id": 3,
+      "numero": 105,
+      "orden": 105,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 119,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 107,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 120,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 108,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 121,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 109,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 122,
+      "plantilla_id": 3,
+      "numero": 2,
+      "orden": 110,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 123,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 111,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 124,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 112,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene y orden del sector en general (paredes, piso, regueras) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 124,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 112,
+      "field": "seccion",
+      "before": "17- SECTOR VESTUARIOS Y BA�\u0018OS FEMENINO/MASCULINO",
+      "after": "17- SECTOR VESTUARIOS Y BAÑOS FEMENINO/MASCULINO"
+    },
+    {
+      "id": 125,
+      "plantilla_id": 3,
+      "numero": 113,
+      "orden": 113,
+      "field": "texto",
+      "before": "Las condiciones de higiene y/u orden del lavamanos y su �rea es adecuada?",
+      "after": "Las condiciones de higiene y/u orden del lavamanos y su área es adecuada?"
+    },
+    {
+      "id": 125,
+      "plantilla_id": 3,
+      "numero": 113,
+      "orden": 113,
+      "field": "seccion",
+      "before": "17- SECTOR VESTUARIOS Y BA�\u0018OS FEMENINO/MASCULINO",
+      "after": "17- SECTOR VESTUARIOS Y BAÑOS FEMENINO/MASCULINO"
+    },
+    {
+      "id": 126,
+      "plantilla_id": 3,
+      "numero": 114,
+      "orden": 114,
+      "field": "seccion",
+      "before": "17- SECTOR VESTUARIOS Y BA�\u0018OS FEMENINO/MASCULINO",
+      "after": "17- SECTOR VESTUARIOS Y BAÑOS FEMENINO/MASCULINO"
+    },
+    {
+      "id": 127,
+      "plantilla_id": 3,
+      "numero": 115,
+      "orden": 115,
+      "field": "seccion",
+      "before": "17- SECTOR VESTUARIOS Y BA�\u0018OS FEMENINO/MASCULINO",
+      "after": "17- SECTOR VESTUARIOS Y BAÑOS FEMENINO/MASCULINO"
+    },
+    {
+      "id": 128,
+      "plantilla_id": 3,
+      "numero": 116,
+      "orden": 116,
+      "field": "texto",
+      "before": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene del mismo es adecuada o permite definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 128,
+      "plantilla_id": 3,
+      "numero": 116,
+      "orden": 116,
+      "field": "seccion",
+      "before": "17- SECTOR VESTUARIOS Y BA�\u0018OS FEMENINO/MASCULINO",
+      "after": "17- SECTOR VESTUARIOS Y BAÑOS FEMENINO/MASCULINO"
+    },
+    {
+      "id": 129,
+      "plantilla_id": 3,
+      "numero": 117,
+      "orden": 117,
+      "field": "seccion",
+      "before": "17- SECTOR VESTUARIOS Y BA�\u0018OS FEMENINO/MASCULINO",
+      "after": "17- SECTOR VESTUARIOS Y BAÑOS FEMENINO/MASCULINO"
+    },
+    {
+      "id": 129,
+      "plantilla_id": 3,
+      "numero": 117,
+      "orden": 117,
+      "field": "texto",
+      "before": "La bolsa est� colocada de forma adecuada y con capacidad para m�s almacenamiento de residuos?",
+      "after": "La bolsa está colocada de forma adecuada y con capacidad para más almacenamiento de residuos?"
+    },
+    {
+      "id": 130,
+      "plantilla_id": 3,
+      "numero": 118,
+      "orden": 118,
+      "field": "seccion",
+      "before": "17- SECTOR VESTUARIOS Y BA�\u0018OS FEMENINO/MASCULINO",
+      "after": "17- SECTOR VESTUARIOS Y BAÑOS FEMENINO/MASCULINO"
+    },
+    {
+      "id": 131,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 119,
+      "field": "seccion",
+      "before": "17- SECTOR VESTUARIOS Y BA�\u0018OS FEMENINO/MASCULINO",
+      "after": "17- SECTOR VESTUARIOS Y BAÑOS FEMENINO/MASCULINO"
+    },
+    {
+      "id": 131,
+      "plantilla_id": 3,
+      "numero": 4,
+      "orden": 119,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 132,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 120,
+      "field": "seccion",
+      "before": "17- SECTOR VESTUARIOS Y BA�\u0018OS FEMENINO/MASCULINO",
+      "after": "17- SECTOR VESTUARIOS Y BAÑOS FEMENINO/MASCULINO"
+    },
+    {
+      "id": 132,
+      "plantilla_id": 3,
+      "numero": 5,
+      "orden": 120,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 133,
+      "plantilla_id": 3,
+      "numero": 6,
+      "orden": 121,
+      "field": "seccion",
+      "before": "17- SECTOR VESTUARIOS Y BA�\u0018OS FEMENINO/MASCULINO",
+      "after": "17- SECTOR VESTUARIOS Y BAÑOS FEMENINO/MASCULINO"
+    },
+    {
+      "id": 134,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 122,
+      "field": "texto",
+      "before": "Las condiciones de higiene y orden de cami�n en general (paredes, piso, puertas) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas realizadas?",
+      "after": "Las condiciones de higiene y orden de camión en general (paredes, piso, puertas) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas realizadas?"
+    },
+    {
+      "id": 134,
+      "plantilla_id": 3,
+      "numero": 1,
+      "orden": 122,
+      "field": "seccion",
+      "before": "18- CAMI�\u001cN DE REPARTO",
+      "after": "18- CAMIÓN DE REPARTO"
+    },
+    {
+      "id": 135,
+      "plantilla_id": 3,
+      "numero": 2,
+      "orden": 123,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los implementos de limpieza (escobas, palas, etc.) son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas del sector del turno en cuestión?"
+    },
+    {
+      "id": 135,
+      "plantilla_id": 3,
+      "numero": 2,
+      "orden": 123,
+      "field": "seccion",
+      "before": "18- CAMI�\u001cN DE REPARTO",
+      "after": "18- CAMIÓN DE REPARTO"
+    },
+    {
+      "id": 136,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 124,
+      "field": "seccion",
+      "before": "18- CAMI�\u001cN DE REPARTO",
+      "after": "18- CAMIÓN DE REPARTO"
+    },
+    {
+      "id": 136,
+      "plantilla_id": 3,
+      "numero": 3,
+      "orden": 124,
+      "field": "texto",
+      "before": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas en el cami�n del turno en cuesti�n?",
+      "after": "Las condiciones de higiene de los equipos en general son adecuadas o permiten definir que la suciedad existente se debe a consecuencias propias de las tareas en el camión del turno en cuestión?"
+    },
+    {
+      "id": 159,
+      "plantilla_id": 5,
+      "numero": 3,
+      "orden": 3,
+      "field": "texto",
+      "before": "Todas las preparaciones se encuentran dentro de su vida �til?",
+      "after": "Todas las preparaciones se encuentran dentro de su vida útil?"
+    },
+    {
+      "id": 160,
+      "plantilla_id": 5,
+      "numero": 4,
+      "orden": 4,
+      "field": "texto",
+      "before": "Los bidones observados se encuentran dentro de su vida �til?",
+      "after": "Los bidones observados se encuentran dentro de su vida útil?"
+    },
+    {
+      "id": 162,
+      "plantilla_id": 5,
+      "numero": 6,
+      "orden": 6,
+      "field": "texto",
+      "before": "Los documentos presentan toda la informaci�n correspondiente?",
+      "after": "Los documentos presentan toda la información correspondiente?"
+    },
+    {
+      "id": 163,
+      "plantilla_id": 5,
+      "numero": 7,
+      "orden": 7,
+      "field": "texto",
+      "before": "Se cumplen los l�mites cr�ticos establecidos?",
+      "after": "Se cumplen los límites críticos establecidos?"
+    },
+    {
+      "id": 164,
+      "plantilla_id": 5,
+      "numero": 8,
+      "orden": 8,
+      "field": "texto",
+      "before": "La documentaci�n presentada permite hacer seguimiento de los procedimientos aplicados?",
+      "after": "La documentación presentada permite hacer seguimiento de los procedimientos aplicados?"
+    },
+    {
+      "id": 165,
+      "plantilla_id": 5,
+      "numero": 9,
+      "orden": 9,
+      "field": "texto",
+      "before": "Los procedimientos aplicados se realizan cumpliendo buenas pr�cticas de manufactura?",
+      "after": "Los procedimientos aplicados se realizan cumpliendo buenas prácticas de manufactura?"
+    },
+    {
+      "id": 166,
+      "plantilla_id": 6,
+      "numero": 1,
+      "orden": 1,
+      "field": "texto",
+      "before": "La publicaci�n del men� en la p�gina web se realiza con la anticipaci�n establecida?",
+      "after": "La publicación del menú en la página web se realiza con la anticipación establecida?"
+    },
+    {
+      "id": 167,
+      "plantilla_id": 6,
+      "numero": 2,
+      "orden": 2,
+      "field": "texto",
+      "before": "La salida del cami�n se realiza seg�n los horarios establecidos? (Rotaci�n 8 y 12hs:Almuerzo 10:50-11:00hs/Tarde 19:10-19:30hs/Noche 23:10-23:30hs.Turno 12hs refrigerios en la ma�ana 8:30-9:00hs igual PGP)",
+      "after": "La salida del camión se realiza según los horarios establecidos? (Rotación 8 y 12hs:Almuerzo 10:50-11:00hs/Tarde 19:10-19:30hs/Noche 23:10-23:30hs.Turno 12hs refrigerios en la mañana 8:30-9:00hs igual PGP)"
+    },
+    {
+      "id": 168,
+      "plantilla_id": 6,
+      "numero": 3,
+      "orden": 3,
+      "field": "texto",
+      "before": "Las caracter�siticas organol�pticas de las preparaciones son adecuadas?",
+      "after": "Las características organolépticas de las preparaciones son adecuadas?"
+    },
+    {
+      "id": 185,
+      "plantilla_id": 8,
+      "numero": 1,
+      "orden": 1,
+      "field": "texto",
+      "before": "La publicaci�n de los men�s y composici�n nutricional en pizarr�n es correcta?",
+      "after": "La publicación de los menús y composición nutricional en pizarrón es correcta?"
+    },
+    {
+      "id": 186,
+      "plantilla_id": 8,
+      "numero": 2,
+      "orden": 2,
+      "field": "texto",
+      "before": "La publicaci�n de los men�s en l�nea es correcta?",
+      "after": "La publicación de los menús en línea es correcta?"
+    },
+    {
+      "id": 187,
+      "plantilla_id": 8,
+      "numero": 3,
+      "orden": 3,
+      "field": "texto",
+      "before": "Publicaci�n de la composici�n Nutricional es correcta?",
+      "after": "Publicación de la composición Nutricional es correcta?"
+    },
+    {
+      "id": 189,
+      "plantilla_id": 8,
+      "numero": 5,
+      "orden": 5,
+      "field": "texto",
+      "before": "Las muestras de las preparaciones (postres, platos principales y guarniciones) en l�nea son correctas?",
+      "after": "Las muestras de las preparaciones (postres, platos principales y guarniciones) en línea son correctas?"
+    },
+    {
+      "id": 190,
+      "plantilla_id": 8,
+      "numero": 6,
+      "orden": 6,
+      "field": "texto",
+      "before": "Las caracter�siticas organol�pticas de las preparaciones son adecuadas?",
+      "after": "Las características organolépticas de las preparaciones son adecuadas?"
+    },
+    {
+      "id": 191,
+      "plantilla_id": 8,
+      "numero": 7,
+      "orden": 7,
+      "field": "texto",
+      "before": "El flujo del servicio y/o la reposici�n de las preparaciones es adecuada?",
+      "after": "El flujo del servicio y/o la reposición de las preparaciones es adecuada?"
+    },
+    {
+      "id": 197,
+      "plantilla_id": 8,
+      "numero": 13,
+      "orden": 13,
+      "field": "texto",
+      "before": "La reposici�n de los utensilios (cubiertos, bandejas, etc.) es adecuada?",
+      "after": "La reposición de los utensilios (cubiertos, bandejas, etc.) es adecuada?"
+    },
+    {
+      "id": 207,
+      "plantilla_id": 8,
+      "numero": 23,
+      "orden": 23,
+      "field": "texto",
+      "before": "La higiene de los equipos en la l�nea de servicio es adecuada?",
+      "after": "La higiene de los equipos en la línea de servicio es adecuada?"
+    },
+    {
+      "id": 209,
+      "plantilla_id": 9,
+      "numero": 2,
+      "orden": 2,
+      "field": "texto",
+      "before": "Existe acci�n correctiva en el caso de que las temperaturas de las c�maras presenten desviaciones?",
+      "after": "Existe acción correctiva en el caso de que las temperaturas de las cámaras presenten desviaciones?"
+    },
+    {
+      "id": 210,
+      "plantilla_id": 9,
+      "numero": 3,
+      "orden": 3,
+      "field": "texto",
+      "before": "Las condiciones de higiene de las c�maras es adecuada?",
+      "after": "Las condiciones de higiene de las cámaras es adecuada?"
+    },
+    {
+      "id": 212,
+      "plantilla_id": 9,
+      "numero": 5,
+      "orden": 5,
+      "field": "texto",
+      "before": "Cada producto se encuentra sectorizado seg�n fecha de vencimiento (PEPS)?",
+      "after": "Cada producto se encuentra sectorizado según fecha de vencimiento (PEPS)?"
+    },
+    {
+      "id": 213,
+      "plantilla_id": 9,
+      "numero": 6,
+      "orden": 6,
+      "field": "texto",
+      "before": "Existe riesgo de contaminaci�n cruzada?",
+      "after": "Existe riesgo de contaminación cruzada?"
+    },
+    {
+      "id": 216,
+      "plantilla_id": 9,
+      "numero": 9,
+      "orden": 9,
+      "field": "texto",
+      "before": "Cada producto se encuentra con vida �til vigente?",
+      "after": "Cada producto se encuentra con vida útil vigente?"
+    },
+    {
+      "id": 217,
+      "plantilla_id": 9,
+      "numero": 10,
+      "orden": 10,
+      "field": "texto",
+      "before": "Cada producto abierto/cocido presenta protecci�n adecuada y fecha de apertura/cocci�n?",
+      "after": "Cada producto abierto/cocido presenta protección adecuada y fecha de apertura/cocción?"
+    },
+    {
+      "id": 219,
+      "plantilla_id": 9,
+      "numero": 12,
+      "orden": 12,
+      "field": "texto",
+      "before": "Aparecen preparaciones con signos de ser sobrantes de l�nea?",
+      "after": "Aparecen preparaciones con signos de ser sobrantes de línea?"
+    },
+    {
+      "id": 220,
+      "plantilla_id": 9,
+      "numero": 13,
+      "orden": 13,
+      "field": "texto",
+      "before": "Los productos congelados presentan la documentaci�n correspondiente?",
+      "after": "Los productos congelados presentan la documentación correspondiente?"
+    },
+    {
+      "id": 221,
+      "plantilla_id": 9,
+      "numero": 14,
+      "orden": 14,
+      "field": "texto",
+      "before": "Los productos congelados cumplen con los l�mites establecidos?",
+      "after": "Los productos congelados cumplen con los límites establecidos?"
+    },
+    {
+      "id": 236,
+      "plantilla_id": 12,
+      "numero": 1,
+      "orden": 1,
+      "field": "seccion",
+      "before": "DOCUMENTACI�\u001cN DISPONIBLE",
+      "after": "DOCUMENTACIÓN DISPONIBLE"
+    },
+    {
+      "id": 237,
+      "plantilla_id": 12,
+      "numero": 2,
+      "orden": 2,
+      "field": "seccion",
+      "before": "DOCUMENTACI�\u001cN DISPONIBLE",
+      "after": "DOCUMENTACIÓN DISPONIBLE"
+    },
+    {
+      "id": 238,
+      "plantilla_id": 12,
+      "numero": 3,
+      "orden": 3,
+      "field": "seccion",
+      "before": "DOCUMENTACI�\u001cN DISPONIBLE",
+      "after": "DOCUMENTACIÓN DISPONIBLE"
+    },
+    {
+      "id": 239,
+      "plantilla_id": 12,
+      "numero": 4,
+      "orden": 4,
+      "field": "seccion",
+      "before": "DOCUMENTACI�\u001cN DISPONIBLE",
+      "after": "DOCUMENTACIÓN DISPONIBLE"
+    },
+    {
+      "id": 240,
+      "plantilla_id": 12,
+      "numero": 5,
+      "orden": 5,
+      "field": "seccion",
+      "before": "DOCUMENTACI�\u001cN DISPONIBLE",
+      "after": "DOCUMENTACIÓN DISPONIBLE"
+    },
+    {
+      "id": 241,
+      "plantilla_id": 12,
+      "numero": 6,
+      "orden": 6,
+      "field": "seccion",
+      "before": "DOCUMENTACI�\u001cN DISPONIBLE",
+      "after": "DOCUMENTACIÓN DISPONIBLE"
+    },
+    {
+      "id": 242,
+      "plantilla_id": 12,
+      "numero": 7,
+      "orden": 7,
+      "field": "seccion",
+      "before": "DOCUMENTACI�\u001cN DISPONIBLE",
+      "after": "DOCUMENTACIÓN DISPONIBLE"
+    },
+    {
+      "id": 243,
+      "plantilla_id": 12,
+      "numero": 8,
+      "orden": 8,
+      "field": "seccion",
+      "before": "DOCUMENTACI�\u001cN DISPONIBLE",
+      "after": "DOCUMENTACIÓN DISPONIBLE"
+    },
+    {
+      "id": 244,
+      "plantilla_id": 12,
+      "numero": 9,
+      "orden": 9,
+      "field": "seccion",
+      "before": "DOCUMENTACI�\u001cN DISPONIBLE",
+      "after": "DOCUMENTACIÓN DISPONIBLE"
+    },
+    {
+      "id": 246,
+      "plantilla_id": 13,
+      "numero": 2,
+      "orden": 2,
+      "field": "texto",
+      "before": "Existe acci�n correctiva en el caso de que las temperaturas de las c�maras presenten desviaciones?",
+      "after": "Existe acción correctiva en el caso de que las temperaturas de las cámaras presenten desviaciones?"
+    },
+    {
+      "id": 247,
+      "plantilla_id": 13,
+      "numero": 3,
+      "orden": 3,
+      "field": "texto",
+      "before": "Las condiciones de higiene de las c�maras es adecuada?",
+      "after": "Las condiciones de higiene de las cámaras es adecuada?"
+    },
+    {
+      "id": 249,
+      "plantilla_id": 13,
+      "numero": 5,
+      "orden": 5,
+      "field": "texto",
+      "before": "Cada producto se encuentra sectorizado seg�n fecha de vencimiento (PEPS)?",
+      "after": "Cada producto se encuentra sectorizado según fecha de vencimiento (PEPS)?"
+    },
+    {
+      "id": 250,
+      "plantilla_id": 13,
+      "numero": 6,
+      "orden": 6,
+      "field": "texto",
+      "before": "Existe riesgo de contaminaci�n cruzada?",
+      "after": "Existe riesgo de contaminación cruzada?"
+    },
+    {
+      "id": 253,
+      "plantilla_id": 13,
+      "numero": 9,
+      "orden": 9,
+      "field": "texto",
+      "before": "Cada producto se encuentra con vida �til vigente?",
+      "after": "Cada producto se encuentra con vida útil vigente?"
+    },
+    {
+      "id": 254,
+      "plantilla_id": 13,
+      "numero": 10,
+      "orden": 10,
+      "field": "texto",
+      "before": "Cada producto abierto/cocido o en proceso de descongelado presenta protecci�n adecuada y fecha de apertura/cocci�n/descongelado?",
+      "after": "Cada producto abierto/cocido o en proceso de descongelado presenta protección adecuada y fecha de apertura/cocción/descongelado?"
+    },
+    {
+      "id": 257,
+      "plantilla_id": 13,
+      "numero": 14,
+      "orden": 13,
+      "field": "texto",
+      "before": "Aparecen preparaciones con signos de ser sobrantes de l�nea?",
+      "after": "Aparecen preparaciones con signos de ser sobrantes de línea?"
+    },
+    {
+      "id": 258,
+      "plantilla_id": 13,
+      "numero": 15,
+      "orden": 14,
+      "field": "texto",
+      "before": "Los productos cocidos refrigerados y/o en proceso de descongelado presentan la documentaci�n correspondiente?",
+      "after": "Los productos cocidos refrigerados y/o en proceso de descongelado presentan la documentación correspondiente?"
+    },
+    {
+      "id": 259,
+      "plantilla_id": 13,
+      "numero": 16,
+      "orden": 15,
+      "field": "texto",
+      "before": "Los productos cocidos refrigerados y/o en proceso de descongelado cumplen con los l�mites establecidos?",
+      "after": "Los productos cocidos refrigerados y/o en proceso de descongelado cumplen con los límites establecidos?"
+    },
+    {
+      "id": 266,
+      "plantilla_id": 14,
+      "numero": 6,
+      "orden": 6,
+      "field": "texto",
+      "before": "En el Manual, se hace referencia a los procedimientos y m�todos de limpieza y desinfecci�n?",
+      "after": "En el Manual, se hace referencia a los procedimientos y métodos de limpieza y desinfección?"
+    },
+    {
+      "id": 267,
+      "plantilla_id": 14,
+      "numero": 7,
+      "orden": 7,
+      "field": "texto",
+      "before": "En el Manual, se indican las operaciones de limpieza y desinfecci�n a llevar a cabo (operacionales y pre-operacionales)?",
+      "after": "En el Manual, se indican las operaciones de limpieza y desinfección a llevar a cabo (operacionales y pre-operacionales)?"
+    },
+    {
+      "id": 268,
+      "plantilla_id": 14,
+      "numero": 8,
+      "orden": 8,
+      "field": "texto",
+      "before": "En el Manual, se indican los productos qu�micos a utilizar para la limpieza y desinfecci�n?",
+      "after": "En el Manual, se indican los productos químicos a utilizar para la limpieza y desinfección?"
+    },
+    {
+      "id": 269,
+      "plantilla_id": 14,
+      "numero": 9,
+      "orden": 9,
+      "field": "texto",
+      "before": "Los productos qu�micos utilizados cuentan con ficha t�cnica?",
+      "after": "Los productos químicos utilizados cuentan con ficha técnica?"
+    },
+    {
+      "id": 270,
+      "plantilla_id": 14,
+      "numero": 10,
+      "orden": 10,
+      "field": "texto",
+      "before": "Si corresponde, se especifica la dosificaci�n del producto qu�mico?",
+      "after": "Si corresponde, se especifica la dosificación del producto químico?"
+    },
+    {
+      "id": 271,
+      "plantilla_id": 14,
+      "numero": 11,
+      "orden": 11,
+      "field": "texto",
+      "before": "Si corresponde, en caso de que la dosificaci�n no sea manual, �Se verifica el funcionamiento del equipo dosificador?",
+      "after": "Si corresponde, en caso de que la dosificación no sea manual, ¿Se verifica el funcionamiento del equipo dosificador?"
+    },
+    {
+      "id": 272,
+      "plantilla_id": 14,
+      "numero": 12,
+      "orden": 12,
+      "field": "texto",
+      "before": "En el manual, se hace referencia al o los responsables de la limpieza, del control y de la verificaci�n?",
+      "after": "En el manual, se hace referencia al o los responsables de la limpieza, del control y de la verificación?"
+    },
+    {
+      "id": 274,
+      "plantilla_id": 14,
+      "numero": 14,
+      "orden": 14,
+      "field": "texto",
+      "before": "Se mantienen archivados los registros de control de cumplimiento de la limpieza y desinfecci�n? (ejecuci�n y monitoreo)",
+      "after": "Se mantienen archivados los registros de control de cumplimiento de la limpieza y desinfección? (ejecución y monitoreo)"
+    },
+    {
+      "id": 277,
+      "plantilla_id": 14,
+      "numero": 17,
+      "orden": 17,
+      "field": "texto",
+      "before": "Se realizan tareas de verificaci�n peri�dica de los procesos de limpieza y desinfecci�n para validar los mismos, considerando diferentes m�todos?",
+      "after": "Se realizan tareas de verificación periódica de los procesos de limpieza y desinfección para validar los mismos, considerando diferentes métodos?"
+    },
+    {
+      "id": 278,
+      "plantilla_id": 14,
+      "numero": 18,
+      "orden": 18,
+      "field": "texto",
+      "before": "Se establece frecuencia de verificaci�n de los procesos de limpieza y desinfecci�n y los m�todos a utilizar?",
+      "after": "Se establece frecuencia de verificación de los procesos de limpieza y desinfección y los métodos a utilizar?"
+    },
+    {
+      "id": 279,
+      "plantilla_id": 14,
+      "numero": 19,
+      "orden": 19,
+      "field": "texto",
+      "before": "Las tareas de verificaci�n para validar los procesos de limpieza y desinfecci�n, �Contemplan todas las superficies que tienen contacto directo o pueden llegar a contactar con los alimentos?",
+      "after": "Las tareas de verificación para validar los procesos de limpieza y desinfección, ¿Contemplan todas las superficies que tienen contacto directo o pueden llegar a contactar con los alimentos?"
+    },
+    {
+      "id": 282,
+      "plantilla_id": 14,
+      "numero": 22,
+      "orden": 22,
+      "field": "texto",
+      "before": "�Se han desarrollado instrucciones y procedimientos de trabajo espec�ficos para el personal operativo presente en la ejecuci�n?",
+      "after": "¿Se han desarrollado instrucciones y procedimientos de trabajo específicos para el personal operativo presente en la ejecución?"
+    },
+    {
+      "id": 283,
+      "plantilla_id": 14,
+      "numero": 23,
+      "orden": 23,
+      "field": "texto",
+      "before": "�Los funcionarios tienen conocimiento sobre los procedimientos de limpieza a aplicar?",
+      "after": "¿Los funcionarios tienen conocimiento sobre los procedimientos de limpieza a aplicar?"
+    },
+    {
+      "id": 284,
+      "plantilla_id": 14,
+      "numero": 24,
+      "orden": 24,
+      "field": "texto",
+      "before": "�Los funcionarios aplican de forma correcta los procedimientos establecidos?",
+      "after": "¿Los funcionarios aplican de forma correcta los procedimientos establecidos?"
+    },
+    {
+      "id": 285,
+      "plantilla_id": 14,
+      "numero": 25,
+      "orden": 25,
+      "field": "texto",
+      "before": "�Los funcionarios tienen conocimiento sobre las medidas correctivas a realizar ante una desviaci�n?",
+      "after": "¿Los funcionarios tienen conocimiento sobre las medidas correctivas a realizar ante una desviación?"
+    },
+    {
+      "id": 286,
+      "plantilla_id": 14,
+      "numero": 26,
+      "orden": 26,
+      "field": "texto",
+      "before": "�Los funcionarios aplican de forma adecuada las medidas correctivas a realizar ante una desviaci�n?",
+      "after": "¿Los funcionarios aplican de forma adecuada las medidas correctivas a realizar ante una desviación?"
+    },
+    {
+      "id": 287,
+      "plantilla_id": 15,
+      "numero": 1,
+      "orden": 1,
+      "field": "texto",
+      "before": "Productos recibidos se encuentran sobre palets evitando la contaminaci�n?",
+      "after": "Productos recibidos se encuentran sobre palets evitando la contaminación?"
+    },
+    {
+      "id": 288,
+      "plantilla_id": 15,
+      "numero": 2,
+      "orden": 2,
+      "field": "texto",
+      "before": "El cami�n de transporte de las materias primas e insumos es adecuado, permitiendo la limpieza y desinfecci�n completa?",
+      "after": "El camión de transporte de las materias primas e insumos es adecuado, permitiendo la limpieza y desinfección completa?"
+    },
+    {
+      "id": 289,
+      "plantilla_id": 15,
+      "numero": 3,
+      "orden": 3,
+      "field": "texto",
+      "before": "Las condiciones de higiene del cami�n de transporte son adecuadas?",
+      "after": "Las condiciones de higiene del camión de transporte son adecuadas?"
+    },
+    {
+      "id": 290,
+      "plantilla_id": 15,
+      "numero": 4,
+      "orden": 4,
+      "field": "texto",
+      "before": "En la recepci�n, �Se realiza control de temperatura de la materia prima que debe mantenerse a temperatura de recepci�n o congelado?",
+      "after": "En la recepción, ¿Se realiza control de temperatura de la materia prima que debe mantenerse a temperatura de recepción o congelado?"
+    },
+    {
+      "id": 291,
+      "plantilla_id": 15,
+      "numero": 5,
+      "orden": 5,
+      "field": "texto",
+      "before": "Se realiza inspecci�n visual de la materia prima (olor, color, etc.) y revisi�n de las condiciones de los envases?",
+      "after": "Se realiza inspección visual de la materia prima (olor, color, etc.) y revisión de las condiciones de los envases?"
+    },
+    {
+      "id": 292,
+      "plantilla_id": 15,
+      "numero": 6,
+      "orden": 6,
+      "field": "texto",
+      "before": "El r�tulo y envase de las materias primas observadas, cumple con la normativa vigente? Denominaci�n de venta del alimento, lista ingredientes, contenidos neto, identificaci�n del origen, identificaci�n del lote, fecha de duraci�n m�nima, preparaci�n e instrucciones de uso del alimento cuando corresponda, etc. Seg�n RBN Decreto N� 315/994",
+      "after": "El rótulo y envase de las materias primas observadas, cumple con la normativa vigente? Denominación de venta del alimento, lista ingredientes, contenidos neto, identificación del origen, identificación del lote, fecha de duración mínima, preparación e instrucciones de uso del alimento cuando corresponda, etc. Según RBN Decreto N° 315/994"
+    },
+    {
+      "id": 293,
+      "plantilla_id": 15,
+      "numero": 7,
+      "orden": 7,
+      "field": "texto",
+      "before": "El r�tulo y envase de las materias primas procesadas en la Planta de la ESA presenta nombre del producto, nombre de la empresa, N� de habilitaci�n, lote, fecha de producci�n y vencimiento y de congelado cuando corresponde?",
+      "after": "El rótulo y envase de las materias primas procesadas en la Planta de la ESA presenta nombre del producto, nombre de la empresa, N° de habilitación, lote, fecha de producción y vencimiento y de congelado cuando corresponde?"
+    },
+    {
+      "id": 294,
+      "plantilla_id": 15,
+      "numero": 8,
+      "orden": 8,
+      "field": "texto",
+      "before": "Productos almacenados se encuentran de forma adecuada sobre palets y/o estanter�as evitando contaminaci�n? Se permite circulaci�n de aire?",
+      "after": "Productos almacenados se encuentran de forma adecuada sobre palets y/o estanterías evitando contaminación? Se permite circulación de aire?"
+    },
+    {
+      "id": 295,
+      "plantilla_id": 15,
+      "numero": 9,
+      "orden": 9,
+      "field": "texto",
+      "before": "Los productos qu�micos se encuentran separados y alejados del �rea de almacenamiento de productos alimenticios?",
+      "after": "Los productos químicos se encuentran separados y alejados del área de almacenamiento de productos alimenticios?"
+    },
+    {
+      "id": 297,
+      "plantilla_id": 15,
+      "numero": 11,
+      "orden": 11,
+      "field": "texto",
+      "before": "Las preparaciones observadas elaboradas en dicho establecimiento o materia prima abierta o fraccionada presentan identificaci�n adecuada? (ideal nombre producto, fecha de apertura y/o producci�n, fecha de congelado y vencimiento original si corresponde y fecha de vencmiento correspondiente)",
+      "after": "Las preparaciones observadas elaboradas en dicho establecimiento o materia prima abierta o fraccionada presentan identificación adecuada? (ideal nombre producto, fecha de apertura y/o producción, fecha de congelado y vencimiento original si corresponde y fecha de vencmiento correspondiente)"
+    },
+    {
+      "id": 298,
+      "plantilla_id": 15,
+      "numero": 12,
+      "orden": 12,
+      "field": "texto",
+      "before": "Productos almacenados presentan informaci�n ver�dica que no genere confusi�n?",
+      "after": "Productos almacenados presentan información verídica que no genere confusión?"
+    },
+    {
+      "id": 299,
+      "plantilla_id": 15,
+      "numero": 13,
+      "orden": 13,
+      "field": "texto",
+      "before": "La materia prima o preparaciones observadas presentan envase y/o protecci�n adecuada de manera de evitar contaminaci�n?",
+      "after": "La materia prima o preparaciones observadas presentan envase y/o protección adecuada de manera de evitar contaminación?"
+    },
+    {
+      "id": 300,
+      "plantilla_id": 15,
+      "numero": 14,
+      "orden": 14,
+      "field": "texto",
+      "before": "La materia prima o productos que se observan se encuentran dentro de su vida �til?",
+      "after": "La materia prima o productos que se observan se encuentran dentro de su vida útil?"
+    },
+    {
+      "id": 301,
+      "plantilla_id": 15,
+      "numero": 15,
+      "orden": 15,
+      "field": "texto",
+      "before": "Se asegura una adecuada rotaci�n de las materias primas?",
+      "after": "Se asegura una adecuada rotación de las materias primas?"
+    },
+    {
+      "id": 303,
+      "plantilla_id": 15,
+      "numero": 17,
+      "orden": 17,
+      "field": "texto",
+      "before": "Se realiza desinfecci�n correspondiente de envases o retiro de envase externo que contienen la materia prima al momento de ingresar al sector de limpios?",
+      "after": "Se realiza desinfección correspondiente de envases o retiro de envase externo que contienen la materia prima al momento de ingresar al sector de limpios?"
+    },
+    {
+      "id": 304,
+      "plantilla_id": 15,
+      "numero": 1,
+      "orden": 18,
+      "field": "texto",
+      "before": "Los materiales de equipos y utensillos utilizados en la zona de elaboraci�n que puedan entrar en contacto con los alimentos/productos, �No permiten la trasmisi�n de sustancias t�xicas, olores, sabores, etc?",
+      "after": "Los materiales de equipos y utensillos utilizados en la zona de elaboración que puedan entrar en contacto con los alimentos/productos, ¿No permiten la trasmisión de sustancias tóxicas, olores, sabores, etc?"
+    },
+    {
+      "id": 305,
+      "plantilla_id": 15,
+      "numero": 2,
+      "orden": 19,
+      "field": "texto",
+      "before": "Utensilios y equipo menor limpio se encuentran almacenados de manera alejada del �rea  de sucios?",
+      "after": "Utensilios y equipo menor limpio se encuentran almacenados de manera alejada del área  de sucios?"
+    },
+    {
+      "id": 306,
+      "plantilla_id": 15,
+      "numero": 3,
+      "orden": 20,
+      "field": "texto",
+      "before": "El flujo en los sectores de higiene de utensilios y equipo menor presenta secuencia l�gica de manera de evitar contaminaci�n de lo sucio a lo limpio?",
+      "after": "El flujo en los sectores de higiene de utensilios y equipo menor presenta secuencia lógica de manera de evitar contaminación de lo sucio a lo limpio?"
+    },
+    {
+      "id": 307,
+      "plantilla_id": 15,
+      "numero": 4,
+      "orden": 21,
+      "field": "texto",
+      "before": "Utensilios y equipo menor se almacenan de forma adecuada para evitar riesgo de contaminaci�n?",
+      "after": "Utensilios y equipo menor se almacenan de forma adecuada para evitar riesgo de contaminación?"
+    },
+    {
+      "id": 309,
+      "plantilla_id": 15,
+      "numero": 6,
+      "orden": 23,
+      "field": "texto",
+      "before": "Sectores donde se realiza cada proceso para la obtenci�n y ofrecimiento de las preparaciones, cuenta con alcohol 70�, toallas desechables, guantes y tapabocas?",
+      "after": "Sectores donde se realiza cada proceso para la obtención y ofrecimiento de las preparaciones, cuenta con alcohol 70°, toallas desechables, guantes y tapabocas?"
+    },
+    {
+      "id": 310,
+      "plantilla_id": 15,
+      "numero": 1,
+      "orden": 24,
+      "field": "texto",
+      "before": "Se aplica un programa eficaz y continuo de control de plagas que incluya una inspecci�n peri�dica del establecimiento y de las zonas circundantes?",
+      "after": "Se aplica un programa eficaz y continuo de control de plagas que incluya una inspección periódica del establecimiento y de las zonas circundantes?"
+    },
+    {
+      "id": 311,
+      "plantilla_id": 15,
+      "numero": 2,
+      "orden": 25,
+      "field": "texto",
+      "before": "Si hubo presencia de alguna plaga, se adoptaron medidas de erradicaci�n?",
+      "after": "Si hubo presencia de alguna plaga, se adoptaron medidas de erradicación?"
+    },
+    {
+      "id": 312,
+      "plantilla_id": 15,
+      "numero": 3,
+      "orden": 26,
+      "field": "texto",
+      "before": "El control, �comprende el uso de agentes qu�micos, f�sicos o biol�gicos autorizados para su uso en la industria alimentaria?",
+      "after": "El control, ¿comprende el uso de agentes químicos, físicos o biológicos autorizados para su uso en la industria alimentaria?"
+    },
+    {
+      "id": 313,
+      "plantilla_id": 15,
+      "numero": 4,
+      "orden": 27,
+      "field": "texto",
+      "before": "La aplicaci�n, �es realizada por personal calificado y entrenado?",
+      "after": "La aplicación, ¿es realizada por personal calificado y entrenado?"
+    },
+    {
+      "id": 314,
+      "plantilla_id": 15,
+      "numero": 5,
+      "orden": 28,
+      "field": "texto",
+      "before": "Si se aplican plaguicidas se tiene cuidado de proteger los alimentos, equipos y utensilios contra la contaminaci�n?",
+      "after": "Si se aplican plaguicidas se tiene cuidado de proteger los alimentos, equipos y utensilios contra la contaminación?"
+    },
+    {
+      "id": 315,
+      "plantilla_id": 15,
+      "numero": 6,
+      "orden": 29,
+      "field": "texto",
+      "before": "Luego de la aplicaci�n: �se limpian minuciosamente equipos y utensilios?",
+      "after": "Luego de la aplicación: ¿se limpian minuciosamente equipos y utensilios?"
+    },
+    {
+      "id": 316,
+      "plantilla_id": 15,
+      "numero": 7,
+      "orden": 30,
+      "field": "texto",
+      "before": "�Hay lugares identificados para el sistema de monitoreo de plagas? (internos)",
+      "after": "¿Hay lugares identificados para el sistema de monitoreo de plagas? (internos)"
+    },
+    {
+      "id": 317,
+      "plantilla_id": 15,
+      "numero": 8,
+      "orden": 31,
+      "field": "texto",
+      "before": "�Se realizan los controles peri�dicos de estas estaciones de monitoreo?",
+      "after": "¿Se realizan los controles periódicos de estas estaciones de monitoreo?"
+    },
+    {
+      "id": 318,
+      "plantilla_id": 15,
+      "numero": 1,
+      "orden": 32,
+      "field": "texto",
+      "before": "Funcionarios utilizan indumentaria necesaria para evitar contaminaci�n?",
+      "after": "Funcionarios utilizan indumentaria necesaria para evitar contaminación?"
+    },
+    {
+      "id": 323,
+      "plantilla_id": 15,
+      "numero": 6,
+      "orden": 37,
+      "field": "texto",
+      "before": "Existe lugar donde se deposite la indumentaria propia de producci�n sucia?",
+      "after": "Existe lugar donde se deposite la indumentaria propia de producción sucia?"
+    },
+    {
+      "id": 325,
+      "plantilla_id": 15,
+      "numero": 8,
+      "orden": 39,
+      "field": "texto",
+      "before": "Se respeta el lugar de dep�sito de la vestimenta y/o indumentaria sucia?",
+      "after": "Se respeta el lugar de depósito de la vestimenta y/o indumentaria sucia?"
+    },
+    {
+      "id": 326,
+      "plantilla_id": 15,
+      "numero": 9,
+      "orden": 40,
+      "field": "texto",
+      "before": "El �rea de manipulaci�n de alimentos est� exenta de ropa y/u objetos personales de los funcionarios?",
+      "after": "El área de manipulación de alimentos está exenta de ropa y/u objetos personales de los funcionarios?"
+    },
+    {
+      "id": 328,
+      "plantilla_id": 15,
+      "numero": 11,
+      "orden": 42,
+      "field": "texto",
+      "before": "Funcionarios est�n exentos de objetos personales (adornos) y maquillaje?",
+      "after": "Funcionarios están exentos de objetos personales (adornos) y maquillaje?"
+    },
+    {
+      "id": 329,
+      "plantilla_id": 15,
+      "numero": 12,
+      "orden": 43,
+      "field": "texto",
+      "before": "Funcionarios presenta u�as cortas sin esmalte?",
+      "after": "Funcionarios presenta uñas cortas sin esmalte?"
+    },
+    {
+      "id": 332,
+      "plantilla_id": 15,
+      "numero": 1,
+      "orden": 46,
+      "field": "texto",
+      "before": "Los procesos observados de recepci�n, elaboraci�n, enfriamiento, preparado, armado, etc. �evitan la posibilidad de contaminaci�n, deterioro o proliferaci�n de microorganismos pat�genos y causantes de putrefacci�n?",
+      "after": "Los procesos observados de recepción, elaboración, enfriamiento, preparado, armado, etc. ¿evitan la posibilidad de contaminación, deterioro o proliferación de microorganismos patógenos y causantes de putrefacción?"
+    },
+    {
+      "id": 332,
+      "plantilla_id": 15,
+      "numero": 1,
+      "orden": 46,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 333,
+      "plantilla_id": 15,
+      "numero": 2,
+      "orden": 47,
+      "field": "texto",
+      "before": "Existe riesgo de contaminaci�n cruzada?",
+      "after": "Existe riesgo de contaminación cruzada?"
+    },
+    {
+      "id": 333,
+      "plantilla_id": 15,
+      "numero": 2,
+      "orden": 47,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 334,
+      "plantilla_id": 15,
+      "numero": 3,
+      "orden": 48,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 334,
+      "plantilla_id": 15,
+      "numero": 3,
+      "orden": 48,
+      "field": "texto",
+      "before": "El aceite o grasa que se utiliza para la cocci�n (freir), �Se filtra posteriormente a su utilizaci�n?",
+      "after": "El aceite o grasa que se utiliza para la cocción (freir), ¿Se filtra posteriormente a su utilización?"
+    },
+    {
+      "id": 335,
+      "plantilla_id": 15,
+      "numero": 4,
+      "orden": 49,
+      "field": "texto",
+      "before": "El aceite o grasa que se utiliza para la cocci�n (freir), �Se protege contra la contaminaci�n?",
+      "after": "El aceite o grasa que se utiliza para la cocción (freir), ¿Se protege contra la contaminación?"
+    },
+    {
+      "id": 335,
+      "plantilla_id": 15,
+      "numero": 4,
+      "orden": 49,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 336,
+      "plantilla_id": 15,
+      "numero": 5,
+      "orden": 50,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 336,
+      "plantilla_id": 15,
+      "numero": 5,
+      "orden": 50,
+      "field": "texto",
+      "before": "Los Puntos de Control observados se aplican seg�n lo establecido?",
+      "after": "Los Puntos de Control observados se aplican según lo establecido?"
+    },
+    {
+      "id": 337,
+      "plantilla_id": 15,
+      "numero": 6,
+      "orden": 51,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 337,
+      "plantilla_id": 15,
+      "numero": 6,
+      "orden": 51,
+      "field": "texto",
+      "before": "El procedimiento observado de cocci�n, se realiza de acuerdo a los rangos de temperatura establecidos por la ESA?",
+      "after": "El procedimiento observado de cocción, se realiza de acuerdo a los rangos de temperatura establecidos por la ESA?"
+    },
+    {
+      "id": 338,
+      "plantilla_id": 15,
+      "numero": 7,
+      "orden": 52,
+      "field": "texto",
+      "before": "El procedimiento observado de reclaentado, se realiza como corresponde cumpliendo con los l�mites establecidos por la ESA?",
+      "after": "El procedimiento observado de reclaentado, se realiza como corresponde cumpliendo con los límites establecidos por la ESA?"
+    },
+    {
+      "id": 338,
+      "plantilla_id": 15,
+      "numero": 7,
+      "orden": 52,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 339,
+      "plantilla_id": 15,
+      "numero": 8,
+      "orden": 53,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 339,
+      "plantilla_id": 15,
+      "numero": 8,
+      "orden": 53,
+      "field": "texto",
+      "before": "El mantenimiento en caliente de las preparaciones observadas, cumple con los l�mites establecidos por la ESA?",
+      "after": "El mantenimiento en caliente de las preparaciones observadas, cumple con los límites establecidos por la ESA?"
+    },
+    {
+      "id": 340,
+      "plantilla_id": 15,
+      "numero": 9,
+      "orden": 54,
+      "field": "texto",
+      "before": "El mantenimiento en fr�o de las preparaciones observadas, cumple con los l�mites establecidos por la ESA?",
+      "after": "El mantenimiento en frío de las preparaciones observadas, cumple con los límites establecidos por la ESA?"
+    },
+    {
+      "id": 340,
+      "plantilla_id": 15,
+      "numero": 9,
+      "orden": 54,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 341,
+      "plantilla_id": 15,
+      "numero": 10,
+      "orden": 55,
+      "field": "texto",
+      "before": "La temperatura de almacenamiento de los productos dentro de las c�maras, es adecuada  seg�n lo establecido por la ESA?",
+      "after": "La temperatura de almacenamiento de los productos dentro de las cámaras, es adecuada  según lo establecido por la ESA?"
+    },
+    {
+      "id": 341,
+      "plantilla_id": 15,
+      "numero": 10,
+      "orden": 55,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 342,
+      "plantilla_id": 15,
+      "numero": 11,
+      "orden": 56,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 342,
+      "plantilla_id": 15,
+      "numero": 11,
+      "orden": 56,
+      "field": "texto",
+      "before": "El proceso de preparaci�n y armado en fr�o de las preparaciones observadas, cumple con los l�mites establecidos por la ESA?",
+      "after": "El proceso de preparación y armado en frío de las preparaciones observadas, cumple con los límites establecidos por la ESA?"
+    },
+    {
+      "id": 343,
+      "plantilla_id": 15,
+      "numero": 12,
+      "orden": 57,
+      "field": "texto",
+      "before": "Los productos terminados que se transportan �se disponen en condiciones que eviten la contaminaci�n?",
+      "after": "Los productos terminados que se transportan ¿se disponen en condiciones que eviten la contaminación?"
+    },
+    {
+      "id": 343,
+      "plantilla_id": 15,
+      "numero": 12,
+      "orden": 57,
+      "field": "seccion",
+      "before": "PROCEDIMIENTOS DESCONGELADO, ELABORACI�\u001cN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC",
+      "after": "PROCEDIMIENTOS DESCONGELADO, ELABORACIÓN, ENFRIAMIENTO, PREPARADO, ARMADO, ETC"
+    },
+    {
+      "id": 344,
+      "plantilla_id": 15,
+      "numero": 1,
+      "orden": 58,
+      "field": "texto",
+      "before": "Se dispone de registros en los PC? (desinfecci�n F y V, desinfecci�n envases, desinfecci�n utensilios, sector de secos, descongelado, etc.)",
+      "after": "Se dispone de registros en los PC? (desinfección F y V, desinfección envases, desinfección utensilios, sector de secos, descongelado, etc.)"
+    },
+    {
+      "id": 345,
+      "plantilla_id": 15,
+      "numero": 2,
+      "orden": 59,
+      "field": "texto",
+      "before": "Los registros en los PC presentan la informaci�n correspondiente?",
+      "after": "Los registros en los PC presentan la información correspondiente?"
+    },
+    {
+      "id": 346,
+      "plantilla_id": 15,
+      "numero": 3,
+      "orden": 60,
+      "field": "texto",
+      "before": "Existe acci�n correctiva en caso de que se detecte una desviaci�n en los PC?",
+      "after": "Existe acción correctiva en caso de que se detecte una desviación en los PC?"
+    },
+    {
+      "id": 347,
+      "plantilla_id": 15,
+      "numero": 4,
+      "orden": 61,
+      "field": "texto",
+      "before": "Se dispone de los registros en los PCC de las preparaciones observadas para ofrecer dicho d�a?",
+      "after": "Se dispone de los registros en los PCC de las preparaciones observadas para ofrecer dicho día?"
+    },
+    {
+      "id": 348,
+      "plantilla_id": 15,
+      "numero": 5,
+      "orden": 62,
+      "field": "texto",
+      "before": "Los registros en los PCC de las preparaciones observadas para ofrecer dicho d�a, presentan la informaci�n correspondiente?",
+      "after": "Los registros en los PCC de las preparaciones observadas para ofrecer dicho día, presentan la información correspondiente?"
+    },
+    {
+      "id": 349,
+      "plantilla_id": 15,
+      "numero": 6,
+      "orden": 63,
+      "field": "texto",
+      "before": "Los registros en los PCC de las preparaciones observadas para ofrecer dicho d�a, cumplen con los l�mites establecidos?",
+      "after": "Los registros en los PCC de las preparaciones observadas para ofrecer dicho día, cumplen con los límites establecidos?"
+    },
+    {
+      "id": 350,
+      "plantilla_id": 15,
+      "numero": 7,
+      "orden": 64,
+      "field": "texto",
+      "before": "Existe acci�n correctiva en caso de que se detecte una desviaci�n en los PCC?",
+      "after": "Existe acción correctiva en caso de que se detecte una desviación en los PCC?"
+    },
+    {
+      "id": 352,
+      "plantilla_id": 15,
+      "numero": 1,
+      "orden": 66,
+      "field": "texto",
+      "before": "Se toma muestra de cada alimento ofrecido en el servicio del d�a en cuesti�n?",
+      "after": "Se toma muestra de cada alimento ofrecido en el servicio del día en cuestión?"
+    },
+    {
+      "id": 353,
+      "plantilla_id": 15,
+      "numero": 2,
+      "orden": 67,
+      "field": "texto",
+      "before": "Las muestras de cada alimento ofrecido, se mantienen por al menos 5 d�as en c�mara?",
+      "after": "Las muestras de cada alimento ofrecido, se mantienen por al menos 5 días en cámara?"
+    },
+    {
+      "id": 354,
+      "plantilla_id": 15,
+      "numero": 3,
+      "orden": 68,
+      "field": "texto",
+      "before": "Las muestras presentan informaci�n necesaria?",
+      "after": "Las muestras presentan información necesaria?"
+    },
+    {
+      "id": 356,
+      "plantilla_id": 15,
+      "numero": 2,
+      "orden": 70,
+      "field": "texto",
+      "before": "Productos para la obtenci�n de alimentos libres de gluten, se almacenan en sector correspondiente?",
+      "after": "Productos para la obtención de alimentos libres de gluten, se almacenan en sector correspondiente?"
+    },
+    {
+      "id": 357,
+      "plantilla_id": 15,
+      "numero": 3,
+      "orden": 71,
+      "field": "texto",
+      "before": "Personal que manipula alimentos en dicho sector cumple con BPM para la obtenci�n y la entrega de alimentos libres de gluten?",
+      "after": "Personal que manipula alimentos en dicho sector cumple con BPM para la obtención y la entrega de alimentos libres de gluten?"
+    },
+    {
+      "id": 358,
+      "plantilla_id": 15,
+      "numero": 4,
+      "orden": 72,
+      "field": "texto",
+      "before": "Personal que manipula alimentos en dicho sector, �No realiza anteriormente tareas que aumenten el riesgo de contaminaci�n con TACC?",
+      "after": "Personal que manipula alimentos en dicho sector, ¿No realiza anteriormente tareas que aumenten el riesgo de contaminación con TACC?"
+    },
+    {
+      "id": 359,
+      "plantilla_id": 16,
+      "numero": 1,
+      "orden": 1,
+      "field": "texto",
+      "before": "El mantenimiento de los sectores es adecuado? O se encuentran en condiciones adecuadas de manera de evitar surga riesgo de contaminaci�n?",
+      "after": "El mantenimiento de los sectores es adecuado? O se encuentran en condiciones adecuadas de manera de evitar surga riesgo de contaminación?"
+    },
+    {
+      "id": 361,
+      "plantilla_id": 16,
+      "numero": 3,
+      "orden": 3,
+      "field": "texto",
+      "before": "Existe acci�n correctiva en el caso de que los valores registrados presenten desviaciones? (Entre 20�C a 23�C y HR hasta 60%)",
+      "after": "Existe acción correctiva en el caso de que los valores registrados presenten desviaciones? (Entre 20°C a 23°C y HR hasta 60%)"
+    },
+    {
+      "id": 364,
+      "plantilla_id": 16,
+      "numero": 6,
+      "orden": 6,
+      "field": "texto",
+      "before": "Cada producto se encuentra sectorizado por tipo de producto y seg�n fecha de vencimiento (PEPS)?",
+      "after": "Cada producto se encuentra sectorizado por tipo de producto y según fecha de vencimiento (PEPS)?"
+    },
+    {
+      "id": 365,
+      "plantilla_id": 16,
+      "numero": 7,
+      "orden": 7,
+      "field": "texto",
+      "before": "Cada producto presenta envase y etiqueta adecuada seg�n normativa vigente?",
+      "after": "Cada producto presenta envase y etiqueta adecuada según normativa vigente?"
+    },
+    {
+      "id": 366,
+      "plantilla_id": 16,
+      "numero": 8,
+      "orden": 8,
+      "field": "texto",
+      "before": "Cada producto se encuentra con vida �til vigente?",
+      "after": "Cada producto se encuentra con vida útil vigente?"
+    },
+    {
+      "id": 367,
+      "plantilla_id": 16,
+      "numero": 9,
+      "orden": 9,
+      "field": "texto",
+      "before": "Cada producto fraccionado/abierto/elaborado presenta protecci�n e identificaci�n adecuada?",
+      "after": "Cada producto fraccionado/abierto/elaborado presenta protección e identificación adecuada?"
+    },
+    {
+      "id": 369,
+      "plantilla_id": 17,
+      "numero": 1,
+      "orden": 1,
+      "field": "seccion",
+      "before": "INTRODUCCI�\u001cN",
+      "after": "INTRODUCCIÓN"
+    },
+    {
+      "id": 369,
+      "plantilla_id": 17,
+      "numero": 1,
+      "orden": 1,
+      "field": "texto",
+      "before": "�El sistema HACCP es desarrollado, revisado y administrado por un equipo multidisciplinario?",
+      "after": "¿El sistema HACCP es desarrollado, revisado y administrado por un equipo multidisciplinario?"
+    },
+    {
+      "id": 370,
+      "plantilla_id": 17,
+      "numero": 2,
+      "orden": 2,
+      "field": "seccion",
+      "before": "INTRODUCCI�\u001cN",
+      "after": "INTRODUCCIÓN"
+    },
+    {
+      "id": 370,
+      "plantilla_id": 17,
+      "numero": 2,
+      "orden": 2,
+      "field": "texto",
+      "before": "�Se ha definido el alcance del plan HACCP y los tipos de peligros que se definir�n?",
+      "after": "¿Se ha definido el alcance del plan HACCP y los tipos de peligros que se definirán?"
+    },
+    {
+      "id": 371,
+      "plantilla_id": 17,
+      "numero": 3,
+      "orden": 3,
+      "field": "texto",
+      "before": "�Se ha realizado una descripci�n de los productos?",
+      "after": "¿Se ha realizado una descripción de los productos?"
+    },
+    {
+      "id": 371,
+      "plantilla_id": 17,
+      "numero": 3,
+      "orden": 3,
+      "field": "seccion",
+      "before": "INTRODUCCI�\u001cN",
+      "after": "INTRODUCCIÓN"
+    },
+    {
+      "id": 372,
+      "plantilla_id": 17,
+      "numero": 4,
+      "orden": 4,
+      "field": "seccion",
+      "before": "INTRODUCCI�\u001cN",
+      "after": "INTRODUCCIÓN"
+    },
+    {
+      "id": 372,
+      "plantilla_id": 17,
+      "numero": 4,
+      "orden": 4,
+      "field": "texto",
+      "before": "�Se ha determinado el uso previsto de los productos?",
+      "after": "¿Se ha determinado el uso previsto de los productos?"
+    },
+    {
+      "id": 373,
+      "plantilla_id": 17,
+      "numero": 5,
+      "orden": 5,
+      "field": "seccion",
+      "before": "INTRODUCCI�\u001cN",
+      "after": "INTRODUCCIÓN"
+    },
+    {
+      "id": 373,
+      "plantilla_id": 17,
+      "numero": 5,
+      "orden": 5,
+      "field": "texto",
+      "before": "�Se han realizado diagramas de flujo abarcando todas las fases de la operaci�n?",
+      "after": "¿Se han realizado diagramas de flujo abarcando todas las fases de la operación?"
+    },
+    {
+      "id": 374,
+      "plantilla_id": 17,
+      "numero": 6,
+      "orden": 6,
+      "field": "seccion",
+      "before": "INTRODUCCI�\u001cN",
+      "after": "INTRODUCCIÓN"
+    },
+    {
+      "id": 374,
+      "plantilla_id": 17,
+      "numero": 6,
+      "orden": 6,
+      "field": "texto",
+      "before": "�Se ha realizado una verificaci�n in situ del diagrama de flujo?",
+      "after": "¿Se ha realizado una verificación in situ del diagrama de flujo?"
+    },
+    {
+      "id": 375,
+      "plantilla_id": 17,
+      "numero": 7,
+      "orden": 7,
+      "field": "texto",
+      "before": "�Se han identificado los peligros que se deben eliminar o reducir a niveles aceptables? (considerar cuando sea posible probabilidad de ocurrencia, evaluaci�n cualitativa de la presencia de peligros, supervivencia o proliferaci�n de microorganismos, producci�n o persistencia de toxinas o agentes qu�micos o f�sicos, otros)",
+      "after": "¿Se han identificado los peligros que se deben eliminar o reducir a niveles aceptables? (considerar cuando sea posible probabilidad de ocurrencia, evaluación cualitativa de la presencia de peligros, supervivencia o proliferación de microorganismos, producción o persistencia de toxinas o agentes químicos o físicos, otros)"
+    },
+    {
+      "id": 376,
+      "plantilla_id": 17,
+      "numero": 8,
+      "orden": 8,
+      "field": "texto",
+      "before": "�Se han definido medidas preventivas o de control?",
+      "after": "¿Se han definido medidas preventivas o de control?"
+    },
+    {
+      "id": 377,
+      "plantilla_id": 17,
+      "numero": 9,
+      "orden": 9,
+      "field": "texto",
+      "before": "�Se han determinado los PCC?",
+      "after": "¿Se han determinado los PCC?"
+    },
+    {
+      "id": 378,
+      "plantilla_id": 17,
+      "numero": 10,
+      "orden": 10,
+      "field": "texto",
+      "before": "�Se han especificado y validado l�mites cr�ticos para cada PCC?",
+      "after": "¿Se han especificado y validado límites críticos para cada PCC?"
+    },
+    {
+      "id": 379,
+      "plantilla_id": 17,
+      "numero": 11,
+      "orden": 11,
+      "field": "texto",
+      "before": "�Los L�mites Cr�ticos pueden ser medidos?",
+      "after": "¿Los Límites Críticos pueden ser medidos?"
+    },
+    {
+      "id": 380,
+      "plantilla_id": 17,
+      "numero": 12,
+      "orden": 12,
+      "field": "texto",
+      "before": "�La determinaci�n de los l�mites cr�ticos se establecen con justificaci�n cient�fica o reglamentaria?",
+      "after": "¿La determinación de los límites críticos se establecen con justificación científica o reglamentaria?"
+    },
+    {
+      "id": 381,
+      "plantilla_id": 17,
+      "numero": 13,
+      "orden": 13,
+      "field": "texto",
+      "before": "�Es posible detectar a trav�s del monitoreo una p�rdida de control del PCC o tendencia hacia la desviaci�n?",
+      "after": "¿Es posible detectar a través del monitoreo una pérdida de control del PCC o tendencia hacia la desviación?"
+    },
+    {
+      "id": 382,
+      "plantilla_id": 17,
+      "numero": 14,
+      "orden": 14,
+      "field": "texto",
+      "before": "Si el monitoreo no es continuo, �la frecuencia y cantidad de intervenciones son suficientes para garantizar el control del PCC?",
+      "after": "Si el monitoreo no es continuo, ¿la frecuencia y cantidad de intervenciones son suficientes para garantizar el control del PCC?"
+    },
+    {
+      "id": 383,
+      "plantilla_id": 17,
+      "numero": 15,
+      "orden": 15,
+      "field": "texto",
+      "before": "�Los monitoreos permiten mediciones r�pidas?",
+      "after": "¿Los monitoreos permiten mediciones rápidas?"
+    },
+    {
+      "id": 384,
+      "plantilla_id": 17,
+      "numero": 16,
+      "orden": 16,
+      "field": "texto",
+      "before": "�Los registros se encuentran firmados por el responsable del monitoreo y por su supervisor?",
+      "after": "¿Los registros se encuentran firmados por el responsable del monitoreo y por su supervisor?"
+    },
+    {
+      "id": 385,
+      "plantilla_id": 17,
+      "numero": 17,
+      "orden": 17,
+      "field": "texto",
+      "before": "�Hay medidas correctivas espec�ficas para cada PCC?",
+      "after": "¿Hay medidas correctivas específicas para cada PCC?"
+    },
+    {
+      "id": 386,
+      "plantilla_id": 17,
+      "numero": 18,
+      "orden": 18,
+      "field": "texto",
+      "before": "�Son suficientes para que una vez aplicadas, el PCC est� nuevamente controlado?",
+      "after": "¿Son suficientes para que una vez aplicadas, el PCC está nuevamente controlado?"
+    },
+    {
+      "id": 387,
+      "plantilla_id": 17,
+      "numero": 19,
+      "orden": 19,
+      "field": "texto",
+      "before": "�Se incluyen medidas de eliminaci�n del producto?",
+      "after": "¿Se incluyen medidas de eliminación del producto?"
+    },
+    {
+      "id": 388,
+      "plantilla_id": 17,
+      "numero": 20,
+      "orden": 20,
+      "field": "texto",
+      "before": "�Estos procedimientos est�n documentados?",
+      "after": "¿Estos procedimientos están documentados?"
+    },
+    {
+      "id": 389,
+      "plantilla_id": 17,
+      "numero": 21,
+      "orden": 21,
+      "field": "texto",
+      "before": "�Hay procedimientos de verificaci�n?",
+      "after": "¿Hay procedimientos de verificación?"
+    },
+    {
+      "id": 390,
+      "plantilla_id": 17,
+      "numero": 22,
+      "orden": 22,
+      "field": "texto",
+      "before": "�La frecuencia de estos procedimientos es suficiente para confirmar el adecuado funcionamiento del sistema?",
+      "after": "¿La frecuencia de estos procedimientos es suficiente para confirmar el adecuado funcionamiento del sistema?"
+    },
+    {
+      "id": 391,
+      "plantilla_id": 17,
+      "numero": 24,
+      "orden": 23,
+      "field": "texto",
+      "before": "�Se realiza validaci�n del sistema HACCP?",
+      "after": "¿Se realiza validación del sistema HACCP?"
+    },
+    {
+      "id": 392,
+      "plantilla_id": 17,
+      "numero": 25,
+      "orden": 24,
+      "field": "texto",
+      "before": "�Se ajustan o calibran los aparatos de control y medici�n utilizados en el monitoreo, para asegurar la exactitud con los par�metros acordados, con una frecuencia determinada?",
+      "after": "¿Se ajustan o calibran los aparatos de control y medición utilizados en el monitoreo, para asegurar la exactitud con los parámetros acordados, con una frecuencia determinada?"
+    },
+    {
+      "id": 393,
+      "plantilla_id": 17,
+      "numero": 26,
+      "orden": 25,
+      "field": "texto",
+      "before": "�Se mantienen registros de los resultados de la calibraci�n y la verificaci�n?",
+      "after": "¿Se mantienen registros de los resultados de la calibración y la verificación?"
+    },
+    {
+      "id": 394,
+      "plantilla_id": 17,
+      "numero": 27,
+      "orden": 26,
+      "field": "texto",
+      "before": "�Existen registros del sistema HACCP?",
+      "after": "¿Existen registros del sistema HACCP?"
+    },
+    {
+      "id": 395,
+      "plantilla_id": 17,
+      "numero": 28,
+      "orden": 27,
+      "field": "texto",
+      "before": "�Existen procedimientos documentados del sistema?",
+      "after": "¿Existen procedimientos documentados del sistema?"
+    },
+    {
+      "id": 396,
+      "plantilla_id": 17,
+      "numero": 29,
+      "orden": 28,
+      "field": "texto",
+      "before": "�Se han desarrollado instrucciones y procedimientos de trabajo espec�ficos para el personal operativo presente en cada PCC?",
+      "after": "¿Se han desarrollado instrucciones y procedimientos de trabajo específicos para el personal operativo presente en cada PCC?"
+    },
+    {
+      "id": 397,
+      "plantilla_id": 17,
+      "numero": 30,
+      "orden": 29,
+      "field": "texto",
+      "before": "�Los funcionarios tienen conocimiento sobre los l�mites cr�ticos de cada PCC a controlar?",
+      "after": "¿Los funcionarios tienen conocimiento sobre los límites críticos de cada PCC a controlar?"
+    },
+    {
+      "id": 398,
+      "plantilla_id": 17,
+      "numero": 31,
+      "orden": 30,
+      "field": "texto",
+      "before": "�Los funcionarios respetan los l�mites cr�ticos de cada PCC a controlar?",
+      "after": "¿Los funcionarios respetan los límites críticos de cada PCC a controlar?"
+    },
+    {
+      "id": 399,
+      "plantilla_id": 17,
+      "numero": 32,
+      "orden": 31,
+      "field": "texto",
+      "before": "�Los funcionarios tienen conocimiento sobre las medidas correctivas a realizar ante una desviaci�n?",
+      "after": "¿Los funcionarios tienen conocimiento sobre las medidas correctivas a realizar ante una desviación?"
+    },
+    {
+      "id": 400,
+      "plantilla_id": 17,
+      "numero": 33,
+      "orden": 32,
+      "field": "texto",
+      "before": "�Los funcionarios aplican de forma adecuada las medidas correctivas a realizar ante una desviaci�n?",
+      "after": "¿Los funcionarios aplican de forma adecuada las medidas correctivas a realizar ante una desviación?"
+    }
+  ]
+}

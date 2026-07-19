@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CumplimientoMenu from "./cumplimientoMenu";
 import AuditoriaArchivo from "./auditoriaArchivo";
+import CapacitacionesEvaluacion from "./capacitacionesEvaluacion";
 
 export default function NuevaAuditoria() {
   const [categoria, setCategoria] = useState(null);
@@ -25,19 +26,19 @@ export default function NuevaAuditoria() {
       id: "inocuidad",
       titulo: "Inocuidad",
       texto: "Controles de seguridad alimentaria, higiene y buenas prácticas.",
-      imagen: "/nutricion.jpg",
+      imagen: "/categoria-inocuidad.jpg",
     },
     {
       id: "servicios",
       titulo: "Servicios",
       texto: "Evaluación de comedor, viandas, atención y calidad del servicio.",
-      imagen: "/nutricion.png",
+      imagen: "/categoria-servicios.jpg",
     },
     {
       id: "SYSO",
       titulo: "SYSO",
       texto: "Revisión de seguridad ocupacional, prevención y condiciones de trabajo.",
-      imagen: "/logo.png",
+      imagen: "/categoria-syso.jpg",
     },
   ];
 
@@ -47,18 +48,25 @@ export default function NuevaAuditoria() {
   }, []);
 
   const normalizarTexto = (texto = "") =>
-    texto
+    String(texto || "")
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");
 
-  const esPlantillaArchivo = (plantilla) => {
-    const nombre = normalizarTexto(plantilla?.nombre);
+  const quitarCriteriosDuplicados = (lista = []) => {
+    const vistos = new Set();
+    return lista.filter((criterio) => {
+      const clave = String(criterio.numero || criterio.texto || criterio.id)
+        .trim()
+        .toLowerCase();
+      if (vistos.has(clave)) return false;
+      vistos.add(clave);
+      return true;
+    });
+  };
 
-    return (
-      plantilla?.tipo === "archivo" ||
-      nombre.includes("seguimiento de capacitaciones")
-    );
+  const esPlantillaArchivo = (plantilla) => {
+    return plantilla?.tipo === "archivo";
   };
 
   const cargarPlantillas = async () => {
@@ -75,7 +83,13 @@ export default function NuevaAuditoria() {
       const data = await res.json();
 
       if (res.ok) {
-        setPlantillas(data);
+        const listaPlantillas = Array.isArray(data)
+          ? data
+          : Array.isArray(data?.plantillas)
+            ? data.plantillas
+            : [];
+
+        setPlantillas(listaPlantillas);
       } else {
         setError(data.message || "Error al cargar plantillas.");
       }
@@ -95,7 +109,7 @@ export default function NuevaAuditoria() {
       const data = await res.json();
 
       if (res.ok) {
-        setEmpresas(data);
+        setEmpresas(Array.isArray(data) ? data : []);
       } else {
         setError(data.message || "Error al cargar empresas.");
       }
@@ -113,12 +127,13 @@ export default function NuevaAuditoria() {
     setLugar("");
     setCriterios([]);
 
-    const nombre = normalizarTexto(plantilla.nombre);
+    const nombre = normalizarTexto(plantilla?.nombre);
 
     const esCumplimientoMenu = nombre.includes("cumplimiento menu");
     const esAuditoriaArchivo = esPlantillaArchivo(plantilla);
+    const esCapacitaciones = nombre.includes("seguimiento de capacitaciones");
 
-    if (esCumplimientoMenu || esAuditoriaArchivo) {
+    if (esCumplimientoMenu || esAuditoriaArchivo || esCapacitaciones) {
       return;
     }
 
@@ -135,7 +150,7 @@ export default function NuevaAuditoria() {
       const data = await res.json();
 
       if (res.ok) {
-        setCriterios(data);
+        setCriterios(quitarCriteriosDuplicados(Array.isArray(data) ? data : []));
       } else {
         setError(data.message || "No se pudieron cargar los criterios.");
       }
@@ -201,10 +216,10 @@ export default function NuevaAuditoria() {
         0,
       );
 
-      const puntajeMaximo = criterios.reduce(
-        (acc, c) => acc + (c.puntaje_maximo || 2),
-        0,
-      );
+      const puntajeMaximo = criterios.reduce((acc, c) => {
+        if (respuestas[c.id]?.no_verificable) return acc;
+        return acc + (c.puntaje_maximo || 2);
+      }, 0);
 
       const porcentaje =
         puntajeMaximo > 0
@@ -233,8 +248,8 @@ export default function NuevaAuditoria() {
         setResumenAuditoria({
           empresa: empresaSeleccionada?.nombre || "-",
           lugar,
-          fecha: new Date().toLocaleDateString(),
-          puntaje: porcentaje,
+          fecha: new Date().toLocaleDateString("es-UY"),
+          puntaje: respuestasData.puntaje?.porcentajeFinal ?? porcentaje,
           plantilla: plantillaSeleccionada.nombre,
         });
 
@@ -255,21 +270,58 @@ export default function NuevaAuditoria() {
   };
 
   const volverAPlantillas = () => {
-    setPlantillaSeleccionada(null);
     setCriterios([]);
+    setRespuestas({});
+    setPlantillaSeleccionada(null);
     setMensaje("");
     setError("");
   };
 
-  const plantillasFiltradas = plantillas.filter(
-    (p) => p.categoria === categoria,
-  );
+  const coincideCategoria = (plantilla) => {
+    const categoriaPlantilla = normalizarTexto(plantilla?.categoria).trim();
+    const categoriaActual = normalizarTexto(categoria).trim();
+
+    if (!categoriaPlantilla || !categoriaActual) {
+      return false;
+    }
+
+    return (
+      categoriaPlantilla === categoriaActual ||
+      categoriaPlantilla.includes(categoriaActual) ||
+      categoriaActual.includes(categoriaPlantilla)
+    );
+  };
+
+  const obtenerImagenCategoria = (categoriaPlantilla) => {
+    const categoriaNormalizada = normalizarTexto(categoriaPlantilla).trim();
+
+    const opcion = categorias.find((item) => {
+      const idNormalizado = normalizarTexto(item.id).trim();
+      const tituloNormalizado = normalizarTexto(item.titulo).trim();
+
+      return (
+        categoriaNormalizada === idNormalizado ||
+        categoriaNormalizada === tituloNormalizado ||
+        categoriaNormalizada.includes(idNormalizado) ||
+        idNormalizado.includes(categoriaNormalizada)
+      );
+    });
+
+    return opcion?.imagen || "/categoria-inocuidad.jpg";
+  };
+
+  const plantillasFiltradas = Array.isArray(plantillas)
+    ? plantillas.filter(coincideCategoria)
+    : [];
 
   const nombrePlantilla = normalizarTexto(plantillaSeleccionada?.nombre);
 
   const esCumplimientoMenu = nombrePlantilla.includes("cumplimiento menu");
 
   const esAuditoriaArchivo = esPlantillaArchivo(plantillaSeleccionada);
+  const esCapacitaciones = nombrePlantilla.includes(
+    "seguimiento de capacitaciones",
+  );
 
   const tipoServicioMenu = nombrePlantilla.includes("vianda")
     ? "viandas"
@@ -330,8 +382,8 @@ export default function NuevaAuditoria() {
   if (!categoria) {
     return (
       <div className="auditorias-wrapper">
-        <h2>Nueva auditoría</h2>
-        <p>Seleccione el tipo de auditoría que desea realizar.</p>
+        <h2>Nueva auditoría/evaluación</h2>
+        <p>Seleccione el tipo de auditoría o evaluación que desea realizar.</p>
 
         <div className="audit-type-grid">
           {categorias.map((opcion) => (
@@ -358,20 +410,31 @@ export default function NuevaAuditoria() {
         </button>
 
         <h2>{categoria === "inocuidad" ? "Inocuidad" : categoria === "servicios"? "Servicios":"SYSO"}</h2>
-        <p>Seleccione una plantilla de auditoría.</p>
+        <p>Seleccione una plantilla de auditoría/evaluación.</p>
 
         <div className="plantillas-grid">
-          {plantillasFiltradas.map((p) => (
-            <div className="plantilla-card" key={p.id}>
-              <div className="plantilla-image"></div>
-              <h3>{p.nombre}</h3>
-              <p>{p.descripcion}</p>
-
-              <button onClick={() => seleccionarPlantilla(p)}>
-                Usar plantilla
-              </button>
+          {plantillasFiltradas.length === 0 ? (
+            <div className="empty-state">
+              <h3>No hay plantillas disponibles</h3>
+              <p>No se encontraron plantillas activas para esta categoria.</p>
             </div>
-          ))}
+          ) : (
+            plantillasFiltradas.map((p) => (
+              <div className="plantilla-card" key={p.id}>
+                <img
+                  className="plantilla-image"
+                  src={obtenerImagenCategoria(p?.categoria)}
+                  alt=""
+                />
+                <h3>{p.nombre}</h3>
+                <p>{p.descripcion}</p>
+
+                <button onClick={() => seleccionarPlantilla(p)}>
+                  Usar plantilla
+                </button>
+              </div>
+            ))
+          )}
         </div>
       </div>
     );
@@ -388,6 +451,21 @@ export default function NuevaAuditoria() {
           plantillaSeleccionada={plantillaSeleccionada}
           empresas={empresas}
           volver={volverAPlantillas}
+        />
+      </div>
+    );
+  }
+
+  if (esCapacitaciones) {
+    return (
+      <div className="auditorias-wrapper">
+        <button className="back-button" onClick={volverAPlantillas}>
+          ←
+        </button>
+
+        <CapacitacionesEvaluacion
+          plantillaSeleccionada={plantillaSeleccionada}
+          empresas={empresas}
         />
       </div>
     );

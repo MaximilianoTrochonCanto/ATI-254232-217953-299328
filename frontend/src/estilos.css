@@ -311,6 +311,15 @@ button:disabled {
   margin-bottom: 30px;
 }
 
+.users-section {
+  margin-top: 32px;
+}
+
+.users-section h3 {
+  margin-bottom: 18px;
+  color: #173b33;
+}
+
 /* SIN SOLICITUDES */
 .empty-state {
   min-height: 60vh;
@@ -866,6 +875,133 @@ margin-top: 30px;
   height: 44px;
 }
 
+.reclamos-section {
+  margin-top: 40px;
+}
+
+.reclamos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.reclamos-header h3 {
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.reclamos-header button {
+  width: auto;
+  min-width: 120px;
+  margin: 0;
+}
+
+.reclamos-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.reclamos-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.reclamo-card {
+  background: white;
+  border: 1px solid rgba(220, 230, 227, 0.95);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(19, 55, 45, 0.08);
+  text-align: left;
+}
+
+.reclamo-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.reclamo-card h4 {
+  color: var(--primary-dark);
+  margin: 0 0 4px;
+}
+
+.reclamo-card-header span {
+  color: var(--muted-color);
+  font-size: 14px;
+}
+
+.reclamo-severity {
+  border-radius: 999px;
+  color: white;
+  font-size: 12px;
+  padding: 6px 10px;
+  text-transform: capitalize;
+}
+
+.severity-baja {
+  background: #1f7a5b;
+}
+
+.severity-media {
+  background: #46627a;
+}
+
+.severity-alta {
+  background: #b56b1f;
+}
+
+.severity-critica {
+  background: var(--danger-color);
+}
+
+.severity-reclamo {
+  background: #1f7a5b;
+}
+
+.severity-informe_observacion {
+  background: #b56b1f;
+}
+
+.severity-informe_no_conformidad {
+  background: var(--danger-color);
+}
+
+.reclamo-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  color: var(--muted-color);
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.reclamo-observaciones {
+  background: rgba(31, 122, 91, 0.08);
+  border-radius: 8px;
+  color: #284c43;
+  margin-top: 16px;
+  padding: 12px;
+}
+
+.reclamo-adjunto-button {
+  width: auto;
+  min-width: 130px;
+  margin-top: 16px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #46627a;
+}
+
+.reclamo-adjunto-button:hover {
+  background: #32475c;
+}
+
 .pdf-button {
   width: auto;
   padding: 14px 24px;
@@ -1136,11 +1272,11 @@ button:hover {
 }
 
 .plantilla-image {
+  display: block;
+  width: calc(100% + 44px);
   height: 126px;
   margin: 0 -22px 20px;
-  background:
-    linear-gradient(135deg, rgba(23, 75, 58, 0.2), rgba(217, 145, 43, 0.14)),
-    url("../public/nutricion.jpg") center/cover;
+  object-fit: cover;
 }
 
 .plantilla-card button,
@@ -1205,6 +1341,149 @@ button:hover {
   padding: 28px;
 }
 
+.reports-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reports-wrapper > h2 {
+  color: var(--primary-dark);
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.reports-wrapper > p {
+  color: var(--muted-color);
+  font-size: 17px;
+  text-align: center;
+}
+
+.reports-filters {
+  max-width: 980px;
+}
+
+.report-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 620px;
+  margin: 0 auto 28px;
+}
+
+.report-summary-card,
+.report-card {
+  background: var(--panel-color);
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.report-summary-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.report-summary-card span {
+  display: block;
+  color: var(--muted-color);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.report-summary-card strong {
+  color: var(--primary-dark);
+  font-size: 32px;
+}
+
+.reports-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.report-card {
+  padding: 24px;
+}
+
+.report-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.report-card-header h3 {
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.report-card-header span {
+  color: var(--muted-color);
+  font-weight: 700;
+}
+
+.bar-chart {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(46px, 1fr));
+  gap: 12px;
+  align-items: end;
+  min-height: 280px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.bar-column {
+  min-width: 46px;
+  display: grid;
+  grid-template-rows: 24px 190px 22px 20px;
+  gap: 7px;
+  justify-items: center;
+}
+
+.bar-value,
+.bar-label,
+.bar-count {
+  color: var(--muted-color);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.bar-track {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  align-items: flex-end;
+  background: #edf4f1;
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  width: 100%;
+  min-height: 0;
+  background: linear-gradient(180deg, var(--accent-color), var(--primary-color));
+  border-radius: 8px 8px 0 0;
+}
+
+.bar-count {
+  color: var(--primary-dark);
+}
+
+.report-legend {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line-color);
+  color: var(--muted-color);
+  font-size: 13px;
+  margin-top: 18px;
+  padding-top: 14px;
+}
+
 @media (max-width: 760px) {
   .container,
   .login-layout,
@@ -1237,6 +1516,15 @@ button:hover {
   .empresa-actions,
   .empresa-card-actions,
   .user-actions {
+    flex-direction: column;
+  }
+
+  .report-card {
+    padding: 18px;
+  }
+
+  .report-card-header {
+    align-items: flex-start;
     flex-direction: column;
   }
 }

@@ -2,7 +2,6 @@ const pool = require("../config/bd");
 
 const crearEmpresa = async (req, res) => {
   try {
-    console.log(req.body)
     const { nombre, direccion } = req.body;
 
     if (!nombre) {
@@ -95,10 +94,14 @@ const actualizarEmpresa = async (req, res) => {
 };
 
 const desactivarEmpresa = async (req, res) => {
+  const client = await pool.connect();
+
   try {
     const { id } = req.params;
 
-    const result = await pool.query(
+    await client.query("BEGIN");
+
+    const result = await client.query(
       `UPDATE empresas
        SET activo = false
        WHERE id = $1
@@ -107,16 +110,32 @@ const desactivarEmpresa = async (req, res) => {
     );
 
     if (result.rows.length === 0) {
+      await client.query("ROLLBACK");
       return res.status(404).json({ message: "Empresa no encontrada" });
     }
 
+    const usuariosResult = await client.query(
+      `UPDATE usuarios
+       SET activo = false
+       WHERE empresa_id = $1
+         AND rol <> 'admin'
+         AND activo = true`,
+      [id]
+    );
+
+    await client.query("COMMIT");
+
     res.json({
-      message: "Empresa desactivada correctamente",
+      message: `Empresa desactivada correctamente. Usuarios desactivados: ${usuariosResult.rowCount}`,
       empresa: result.rows[0],
+      usuarios_desactivados: usuariosResult.rowCount,
     });
   } catch (error) {
+    await client.query("ROLLBACK");
     console.error("Error al desactivar empresa:", error);
     res.status(500).json({ message: "Error interno del servidor" });
+  } finally {
+    client.release();
   }
 };
 

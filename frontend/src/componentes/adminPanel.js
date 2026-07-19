@@ -4,11 +4,11 @@ import GestionEmpresas from "./gestionEmpresas";
 import ListaAuditorias from "./listaAuditorias";
 import NuevaAuditoria from "./nuevaAuditoria";
 import ReclamoInforme from "./reclamoInforme";
+import ReportesAuditorias from "./reportesAuditorias";
 
 export default function AdminPanel({ logout }) {
   const [seccion, setSeccion] = useState("solicitudes");
   const [menuOpen, setMenuOpen] = useState(false);
-
   const [notificaciones, setNotificaciones] = useState([]);
   const [mostrarNotificaciones, setMostrarNotificaciones] = useState(false);
 
@@ -21,10 +21,7 @@ export default function AdminPanel({ logout }) {
 
   return (
     <div className="admin-layout">
-      <button
-        className="menu-toggle"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </button>
 
@@ -32,7 +29,6 @@ export default function AdminPanel({ logout }) {
         className="notification-bell"
         onClick={() => {
           setMostrarNotificaciones(!mostrarNotificaciones);
-
           setNotificaciones((prev) =>
             prev.map((n) => ({
               ...n,
@@ -43,11 +39,7 @@ export default function AdminPanel({ logout }) {
       >
         🔔
 
-        {noLeidas > 0 && (
-          <span className="notification-badge">
-            {noLeidas}
-          </span>
-        )}
+        {noLeidas > 0 && <span className="notification-badge">{noLeidas}</span>}
       </div>
 
       {mostrarNotificaciones && (
@@ -56,10 +48,7 @@ export default function AdminPanel({ logout }) {
             <p>No hay notificaciones</p>
           ) : (
             notificaciones.map((n) => (
-              <div
-                key={n.id}
-                className="notification-item"
-              >
+              <div key={n.id} className="notification-item">
                 <strong>{n.titulo}</strong>
                 <p>{n.mensaje}</p>
               </div>
@@ -82,7 +71,7 @@ export default function AdminPanel({ logout }) {
           className={seccion === "solicitudes" ? "active" : ""}
           onClick={() => cambiarSeccion("solicitudes")}
         >
-          Solicitudes de acceso
+          Usuarios
         </button>
 
         <button
@@ -103,7 +92,7 @@ export default function AdminPanel({ logout }) {
           className={seccion === "nueva" ? "active" : ""}
           onClick={() => cambiarSeccion("nueva")}
         >
-          Nueva auditoría
+          Nueva auditoria/evaluacion
         </button>
 
         <button
@@ -127,39 +116,21 @@ export default function AdminPanel({ logout }) {
 
       <main className="admin-content">
         {seccion === "solicitudes" && (
-          <PendingUsers
-            logout={logout}
-            setNotificaciones={setNotificaciones}
-          />
+          <PendingUsers logout={logout} setNotificaciones={setNotificaciones} />
         )}
 
-        {seccion === "empresas" && (
-          <GestionEmpresas logout={logout} />
-        )}
+        {seccion === "empresas" && <GestionEmpresas logout={logout} />}
 
         {seccion === "auditorias" && (
-          <ListaAuditorias
-            modo="admin"
-            logout={logout}
-          />
+          <ListaAuditorias modo="admin" logout={logout} />
         )}
 
-        {seccion === "nueva" && (
-          <NuevaAuditoria />
-        )}
+        {seccion === "nueva" && <NuevaAuditoria />}
 
-        {seccion === "reclamos" && (
-          <ReclamoInforme />
-        )}
+        {seccion === "reclamos" && <ReclamoInforme modo="admin" logout={logout} />}
 
         {seccion === "reportes" && (
-          <div className="empty-state">
-            <h3>Reportes</h3>
-            <p>
-              Esta sección se desarrollará en próximos
-              sprints.
-            </p>
-          </div>
+          <ReportesAuditorias modo="admin" logout={logout} />
         )}
       </main>
     </div>
